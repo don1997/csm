@@ -1,5 +1,7 @@
 # CSM
 
 ## Testing
-`$ flask run`
+```bash
+$ flask run
+```
 -----
