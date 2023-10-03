@@ -2,6 +2,18 @@ Changelog
 =========
 
 
+(unreleased)
+------------
+
+New
+~~~
+- Pulls from boostrap template. [Donald McLaughlin]
+
+Other
+~~~~~
+- Docs: Repo Changelog update. [Donald McLaughlin]
+
+
 00.00.03 (2023-10-03)
 ---------------------
 
