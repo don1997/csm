@@ -2,6 +2,24 @@ Changelog
 =========
 
 
+00.00.03 (2023-10-03)
+---------------------
+
+New
+~~~
+- Add template test and flask-bootstrap Chore: Added commit syntax in
+  README. [Donald McLaughlin]
+
+Fix
+~~~
+- Fixed readme snippet. [Donald McLaughlin]
+
+Other
+~~~~~
+- Docs: added testing command. [Donald McLaughlin]
+- Chore: fixed tag to intended message. [Donald McLaughlin]
+
+
 00.00.02 (2023-10-02)
 ---------------------
 
