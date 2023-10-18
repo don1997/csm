@@ -15,3 +15,7 @@ $ flask run
     Chore: for housekeeping tasks, e.g., updating the build process.
 
 -----
+ 
+### Todo
+- Fix Version tag
+- Fix changelog
