@@ -7,20 +7,14 @@ Changelog
 
 New
 ~~~
+- Introduce SQL Alchemy to application, Create SQL Lite DB for test,
+  Added crud ops. In progress: Add delete feature with respective
+  template. [Donald McLaughlin]
 - Pulls from boostrap template. [Donald McLaughlin]
-
-Other
-~~~~~
-- Docs: Repo Changelog update. [Donald McLaughlin]
-
-
-00.00.03 (2023-10-03)
----------------------
-
-New
-~~~
 - Add template test and flask-bootstrap Chore: Added commit syntax in
   README. [Donald McLaughlin]
+- Introduced gitignore to repo. Added: CHANGELOG.md, initial project
+  tag. [Donald McLaughlin]
 
 Fix
 ~~~
@@ -28,21 +22,10 @@ Fix
 
 Other
 ~~~~~
+- Updated changelog. [Donald McLaughlin]
+- Docs: Repo Changelog update. [Donald McLaughlin]
 - Docs: added testing command. [Donald McLaughlin]
 - Chore: fixed tag to intended message. [Donald McLaughlin]
-
-
-00.00.02 (2023-10-02)
----------------------
-
-New
-~~~
-- Introduced gitignore to repo. Added: CHANGELOG.md, initial project
-  tag. [Donald McLaughlin]
-
-
-00.00.01 (2023-10-02)
----------------------
 - Modify readme. [Donald McLaughlin]
 - Added dummy txt files to fix missing empty folders. [Donald
   McLaughlin]
