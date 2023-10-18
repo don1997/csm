@@ -1,0 +1,14 @@
+{% extends 'base.html'%}
+
+{% block header %}
+<h1> {% block title %} User Detail {% endblock %}</h1>
+{% endblock %}
+
+{% block content %}
+<h1> USER CREATED! </h1>
+<h1> User Detail </h1>
+<p><strong>ID:</strong> {{user.id}}</p>
+<p><strong>Username:</strong> {{user.username}}</p>
+<p>>strong>Email</strong> {{user.email}}</p>
+
+{% endblock %}
