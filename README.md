@@ -19,3 +19,5 @@ $ flask run
 ### Todo
 - Fix Version tag
 - Fix changelog
+- Add install scripts for pip stuff
+- Add demo instructions with pics/gif?
