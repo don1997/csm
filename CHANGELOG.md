@@ -7,6 +7,7 @@ Changelog
 
 New
 ~~~
+- Added delete and fixed issues with prev crud ops. [Donald McLaughlin]
 - Introduce SQL Alchemy to application, Create SQL Lite DB for test,
   Added crud ops. In progress: Add delete feature with respective
   template. [Donald McLaughlin]
@@ -22,6 +23,8 @@ Fix
 
 Other
 ~~~~~
+- Chore: Added todo README. [Donald McLaughlin]
+- Chore: test for ssh compat and update changelog. [Donald McLaughlin]
 - Updated changelog. [Donald McLaughlin]
 - Docs: Repo Changelog update. [Donald McLaughlin]
 - Docs: added testing command. [Donald McLaughlin]
