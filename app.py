@@ -46,8 +46,17 @@ def hello_world():
     return render_template('my_template.html')
 
 @app.route("/users")
+# For annoying browser autocomplete!
+@app.route("/users/")
+
 def user_list():
-    users = db.session.execute(db.select(User).order_by(User.username)).scalars()
+    users = db.session.execute(db.select(User).order_by(User.id)).scalars()
+    # Sanity check with template
+    """
+    for user in users:
+        print(user.id, user.username, user.email)
+    return "Check your console."
+    """
     return render_template("user_list.html",users=users)
 
 @app.route("/users/create", methods=["GET", "POST"])
@@ -76,13 +85,9 @@ def user_detail(id):
 @app.route("/user/<int:id>/delete", methods=["GET", "POST"])
 def user_delete(id):
     user = db.get_or_404(User, id)
-
-    if request.method == "POST":
-        db.session.delete(user)
-        db.session.commit()
-        return redirect(url_for("user_list"))
-
-    return render_template("user/delete.html", user=user)
+    db.session.delete(user)
+    db.session.commit()
+    return redirect(url_for("user_list"))
 
 
 
