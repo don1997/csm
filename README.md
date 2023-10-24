@@ -47,3 +47,8 @@ $ flask run
 4 directories, 13 files
 ```
 ---- 
+
+### Steps to add tag
+git tag -a 00.00.01 -m 'my version 1.0' NOTE: DO NOT USE 'vxx.xx.xx'  
+git push origin --tags
+gitchangelog > CHANGELOG.md
