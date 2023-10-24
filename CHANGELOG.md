@@ -23,6 +23,7 @@ Fix
 
 Other
 ~~~~~
+- Test: test. [Donald McLaughlin]
 - Test: test log. [Donald McLaughlin]
 - Chore: attempt to fix tags and changelog. [Donald McLaughlin]
 - Chore: Redo tree. [Donald McLaughlin]
