@@ -1,6 +1,7 @@
 {% extends "bootstrap/base.html" %}
 {% block title %}This is an example page{% endblock %}
 
+<link rel="stylesheet" href="{{ url_for('static', filename='pygments.css') }}">
 {% block navbar %}
 <div class="navbar navbar-fixed-top">
   <!-- ... -->
@@ -20,4 +21,8 @@ Donec lacus ante, tristique at elit sodales, rutrum tincidunt sapien. Nullam lec
 Donec pretium, ligula in dictum porttitor, enim nulla faucibus dui, quis elementum dui erat ac erat. Mauris est metus, commodo id purus sed, maximus scelerisque nibh. Integer aliquet libero ac turpis feugiat sodales. Aliquam volutpat lorem sit amet bibendum gravida. Nunc eget lacus euismod, sollicitudin dui eget, aliquam nibh. Quisque ligula felis, tempor eget sapien in, lobortis venenatis massa. Curabitur eu semper felis. Maecenas sit amet elit ut elit volutpat ultricies sed id tellus. Cras sit amet tortor in purus posuere condimentum.
 
 Quisque tincidunt magna in ornare tempor. Vivamus dapibus at nunc nec ornare. Integer ornare varius quam in laoreet. Quisque at purus pharetra, porttitor augue ac, tempor arcu. Duis id nulla sit amet leo fermentum sagittis ac vitae libero. Fusce eu justo quis odio fermentum hendrerit sed eu arcu. In mi ante, posuere non magna consequat, commodo volutpat nulla. Mauris porttitor eros at sem scelerisque, sed euismod turpis vulputate. Morbi scelerisque, enim eu imperdiet lobortis, nulla dui ullamcorper enim, elementum eleifend nibh odio non arcu. Sed sed nunc id sapien malesuada feugiat. Fusce in odio tortor. Quisque tincidunt tellus nibh, in euismod nibh tincidunt ut. In hac habitasse platea dictumst. </p>
+
+
+{{ highlighted_code|safe }}
+
 {% endblock %}

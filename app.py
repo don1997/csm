@@ -1,3 +1,7 @@
+# Pygments Stuff
+from pygments import highlight
+from pygments.lexers import PythonLexer
+from pygments.formatters import HtmlFormatter
 
 # Original app
 from flask import Flask, render_template
@@ -88,8 +92,11 @@ def user_delete(id):
     db.session.delete(user)
     db.session.commit()
     return redirect(url_for("user_list"))
-
-
-
+#sanity check
+@app.route("/test")
+def test():
+    code = 'print("Hello, World!")\ndef recur_factorial(n):\nif n == 1:\nreturn n\nelse:\nreturn n*recur_factorial(n-1)'
+    highlighted_code = highlight(code, PythonLexer(), HtmlFormatter())
+    return render_template('test.html', highlighted_code=highlighted_code)
 if __name__ == '__main__':
     app.run()

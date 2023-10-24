@@ -23,6 +23,11 @@ Fix
 
 Other
 ~~~~~
+- Chore: Redo tree. [Donald McLaughlin]
+- Chore: replant tree. [Donald McLaughlin]
+- Chore: add tree. [Donald McLaughlin]
+- Chore: Update README. [Donald McLaughlin]
+- Chore: update log. [Donald McLaughlin]
 - Chore: Added todo README. [Donald McLaughlin]
 - Chore: test for ssh compat and update changelog. [Donald McLaughlin]
 - Updated changelog. [Donald McLaughlin]
