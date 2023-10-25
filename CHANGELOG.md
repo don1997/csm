@@ -7,10 +7,12 @@ Changelog
 
 New
 ~~~
+- Added pytest Unit testing to app. [Donald McLaughlin]
 - View code and entry form in browser. [Donald McLaughlin]
 
 Other
 ~~~~~
+- Chore: changelog. [Donald McLaughlin]
 - Chore: Readme. [Donald McLaughlin]
 - Chore: Update readme for steps on tagging. [Donald McLaughlin]
 - Test: update changeloggit add .git add . [Donald McLaughlin]
