@@ -17,11 +17,23 @@ $ flask run
 -----
  
 ### Todo
-- Fix Version tag
-- Fix changelog
+- Fix Version tag x
+- Fix changelog x
 - Add install scripts for pip stuff
 - Add demo instructions with pics/gif?
 
+### Project Todo
+- Create Prototype of app. 
+* Unit testing lib 
+* Add buttons to navigate page
+* Add feature to enter snippet and save
+* Add feature to edit snippet and save
+* Add feature to delete snippet
+* Add feat view snippet
+* Establish and maintain workflow!
+
+### Project questions
+* Front end framework material design
 ----
 
 ```
@@ -52,3 +64,4 @@ $ flask run
 git tag -a 00.00.01 -m 'my version 1.0' NOTE: DO NOT USE 'vxx.xx.xx'  
 git push origin --tags
 gitchangelog > CHANGELOG.md
+

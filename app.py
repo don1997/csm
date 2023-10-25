@@ -45,10 +45,11 @@ with app.app_context():
     db.create_all()
     
 #original app
+"""
 @app.route("/")
 def hello_world():
     return render_template('my_template.html')
-
+"""
 @app.route("/users")
 # For annoying browser autocomplete!
 @app.route("/users/")
@@ -98,5 +99,33 @@ def test():
     code = 'print("Hello, World!")\ndef recur_factorial(n):\nif n == 1:\nreturn n\nelse:\nreturn n*recur_factorial(n-1)'
     highlighted_code = highlight(code, PythonLexer(), HtmlFormatter())
     return render_template('test.html', highlighted_code=highlighted_code)
+
+"""
+# Add snippet 
+@app.route("/test/add")
+def add():
+    
+
+    return render_template('add_snippet.html')
+
+# Edit Snippet 
+@app.route("/test/edit")
+def add():
+    
+
+    return render_template('edit_snippet.html')
+
+"""
+
+@app.route("/", methods=["GET", "POST"])
+def index():
+
+    highlighted_code = None
+    if request.method == "POST":
+        code = request.form["code"]
+        highlighted_code = highlight(code, PythonLexer(), HtmlFormatter())
+
+    return render_template("index.html", highlighted_code=highlighted_code)
+
 if __name__ == '__main__':
     app.run()
