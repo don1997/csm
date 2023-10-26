@@ -2,6 +2,13 @@ Changelog
 =========
 
 
+(unreleased)
+------------
+- Change: Cleaned up old code, old uneeded files to make way for new
+  v0.1.0. [Donald McLaughlin]
+- Chore: Added branches and cl. [Donald McLaughlin]
+
+
 0.1.0 (2023-10-26)
 ------------------
 - Chore: cl. [Donald McLaughlin]
