@@ -34,4 +34,9 @@ git push origin --tags
 
 gitchangelog > CHANGELOG.md
 
-
+### Goal
+Create prototyp with the following features:
+* User auth x
+* DB Design and CRUD 
+* user-snippet relationship
+* Basic front end app to put it all together.
