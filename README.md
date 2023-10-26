@@ -40,3 +40,13 @@ Create prototyp with the following features:
 * DB Design and CRUD 
 * user-snippet relationship
 * Basic front end app to put it all together.
+
+---
+
+### Startup Steps
+1. clone repo
+2. cd into cloned repo
+3. python3 -m venv venv
+4. source venv/bin/activate
+5. pip install -r requirements.txt
+6. flask run
