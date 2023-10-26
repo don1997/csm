@@ -34,6 +34,12 @@ $ flask run
 
 ### Project questions
 * Front end framework material design
+### Next Steps
+1. User Auth
+2. Snippet Model
+3. Crud Ops for snippet model
+4. user-snippet association
+
 ----
 
 ```
@@ -66,4 +72,5 @@ git tag -a 00.00.01 -m 'my version 1.0' NOTE: DO NOT USE 'vxx.xx.xx'
 git push origin --tags
 
 gitchangelog > CHANGELOG.md
+
 

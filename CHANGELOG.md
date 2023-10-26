@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-(unreleased)
-------------
+00.00.10 (2023-10-26)
+---------------------
 
 New
 ~~~
@@ -12,6 +12,7 @@ New
 
 Other
 ~~~~~
+- Chore: C.L. [Donald McLaughlin]
 - Chore: changelog. [Donald McLaughlin]
 - Chore: Readme. [Donald McLaughlin]
 - Chore: Update readme for steps on tagging. [Donald McLaughlin]
