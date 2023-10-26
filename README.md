@@ -1,6 +1,5 @@
-# CSM
+# CSM v0.1.0 
 
-## Testing
 ```bash
 $ flask run
 ```
@@ -15,56 +14,16 @@ $ flask run
     Chore: for housekeeping tasks, e.g., updating the build process.
 
 -----
- 
-### Todo
-- Fix Version tag x
-- Fix changelog x
-- Add install scripts for pip stuff
-- Add demo instructions with pics/gif?
 
-### Project Todo
-- Create Prototype of app. 
-* Unit testing lib 
-* Add buttons to navigate page
-* Add feature to enter snippet and save
-* Add feature to edit snippet and save
-* Add feature to delete snippet
-* Add feat view snippet x
-* Establish and maintain workflow!
+### Branching stuff
+- create branch
+git branch <branch_name or vx.x.x>
 
-### Project questions
-* Front end framework material design
-### Next Steps
-1. User Auth
-2. Snippet Model
-3. Crud Ops for snippet model
-4. user-snippet association
+- switch
+git checkout vx.x.x
 
-----
-
-```
-.
-├── app.py
-├── CHANGELOG.md
-├── instance
-│   └── project.db
-├── __pycache__
-│   └── app.cpython-310.pyc
-├── README.md
-├── static
-│   └── dummy.txt
-└── templates
-    ├── base.html
-    ├── my_template.html
-    ├── test.txt
-    ├── user_create.html
-    ├── user_delete.html
-    ├── user_detail.html
-    └── user_list.html
-
-4 directories, 13 files
-```
----- 
+- create and switch to new branch
+git checkout -b vx.x.x
 
 ### Steps to add tag
 git tag -a 00.00.01 -m 'my version 1.0' NOTE: DO NOT USE 'vxx.xx.xx'  
