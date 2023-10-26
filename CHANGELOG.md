@@ -2,8 +2,18 @@ Changelog
 =========
 
 
-(unreleased)
-------------
+0.2.0 (2023-10-26)
+------------------
+
+New
+~~~
+- Add User-auth, req.txt, .gitignore for venv, new templates for login
+  forms. [Donald McLaughlin]
+- Basic Routing and templates for user auth. [Donald McLaughlin]
+
+Other
+~~~~~
+- Chore: cl. [Donald McLaughlin]
 - Change: Cleaned up old code, old uneeded files to make way for new
   v0.1.0. [Donald McLaughlin]
 - Chore: Added branches and cl. [Donald McLaughlin]
