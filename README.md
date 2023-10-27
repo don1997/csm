@@ -50,3 +50,9 @@ Create prototyp with the following features:
 4. source venv/bin/activate
 5. pip install -r requirements.txt
 6. flask run
+
+### Merge branch
+once feature works!
+git checkout master #switch to master
+git merge v0.1.0 #merge v0.1.0 to master
+git push origin master #push changes!
