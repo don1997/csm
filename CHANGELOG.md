@@ -2,6 +2,18 @@ Changelog
 =========
 
 
+(unreleased)
+------------
+
+New
+~~~
+- Added intermediate of snippet form with tempalte. [Donald McLaughlin]
+
+Other
+~~~~~
+- Chore: tag v0.3.0 and cl. [Donald McLaughlin]
+
+
 0.3.0 (2023-10-28)
 ------------------
 
