@@ -127,7 +127,8 @@ def login():
 @app.route('/dashboard',methods=['GET','POST'])
 @login_required
 def dashboard():
-    snippets = Snippet.query.all()
+    #snippets = Snippet.query.all()
+    snippets=current_user.snippets
     return render_template('dashboard.html',snippets=snippets)
 
 @app.route('/logout', methods=["GET","POST"])

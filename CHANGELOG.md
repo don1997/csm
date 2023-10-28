@@ -16,6 +16,7 @@ New
 Other
 ~~~~~
 - Chore: cl. [Donald McLaughlin]
+- Chore: cl. [Donald McLaughlin]
 - Chore: tag v0.3.0 and cl. [Donald McLaughlin]
 
 
