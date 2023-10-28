@@ -90,8 +90,8 @@ class LoginForm(FlaskForm):
 
 # TODO
 class SnippetForm(FlaskForm):
-    pass
-
+    
+    snippet = TextAreaField(validators=[InputRequired()])
 
 """
 CLASS FORMS
@@ -146,6 +146,13 @@ def register():
 
 
     return render_template('register.html',form=form)
+
+@app.route('/snippet/new', methods=['GET','POST'])
+def new_snippet():
+    
+    form = SnippetForm()
+
+    return render_template('new_snippet.html',form=form)
 """
 ROUTES
 """
