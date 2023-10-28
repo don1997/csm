@@ -1,4 +1,4 @@
-# CSM v0.1.0 
+# CSM v0.1.0  
 
 ```bash
 $ flask run
@@ -50,7 +50,7 @@ Create prototyp with the following features:
 4. source venv/bin/activate
 5. pip install -r requirements.txt
 6. flask run
-
+7. deactivate #to turn off venv!
 ### Merge branch
 once feature works!
 git checkout master #switch to master

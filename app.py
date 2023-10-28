@@ -1,16 +1,22 @@
+from flask_migrate import Migrate
+
 from flask import Flask, render_template, url_for, redirect
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 
 from flask_wtf import FlaskForm
-from wtforms import StringField, PasswordField, SubmitField
+from wtforms import StringField, PasswordField, SubmitField, TextAreaField
 from wtforms.validators import InputRequired, Length, ValidationError
 
 from flask_bcrypt import Bcrypt
 
+from datetime import datetime
+
+
 app = Flask(__name__)
 db = SQLAlchemy(app)
 bcrypt=Bcrypt(app)
+migrate = Migrate(app,db)
 
 app.config['SQLALCHEMY_DATABASE_URI'] ='sqlite:///database.db'
 
@@ -25,12 +31,37 @@ login_manager.login_view = 'login'
 def load_user(user_id):
     return User.query.get(int(user_id))
 
+
+
+"""
+CLASSES
+"""
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     #unique=True: Two users cannot have same name
     username = db.Column(db.String(20), nullable=True, unique=True)
     password = db.Column(db.String(80), nullable=True)
+    
+    #Insert to include relationship User=Snippet
+    snippets = db.relationship('Snippet', backref='author',lazy=True)
 
+
+class Snippet(db.Model):
+    
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(100), nullable=True, unique=True)
+    content = db.Column(db.Text, nullable=False)
+    date_posted=db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
+    #userid
+    user_id = db.Column(db.Integer, db.ForeignKey('user.id', name='fk_user_id') ,nullable=False)
+
+""""
+CLASSES
+"""
+
+"""
+CLASS FORMS
+"""
 class RegisterForm(FlaskForm):
     username = StringField(validators=[
                            InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Username"})
@@ -55,8 +86,23 @@ class LoginForm(FlaskForm):
                              InputRequired(), Length(min=8, max=20)], render_kw={"placeholder": "Password"})
 
     submit = SubmitField('Login')
-   
+ 
 
+# TODO
+class SnippetForm(FlaskForm):
+    pass
+
+
+"""
+CLASS FORMS
+"""
+
+
+
+
+"""
+ROUTES
+"""
 @app.route('/')
 def home():
     return render_template('home.html')
@@ -100,5 +146,8 @@ def register():
 
 
     return render_template('register.html',form=form)
+"""
+ROUTES
+"""
 if __name__ == '__main__':
     app.run(debug=True)
