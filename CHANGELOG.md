@@ -7,6 +7,8 @@ Changelog
 
 New
 ~~~
+- Added specific user/id to dashboard.html as well as list all snippets
+  associated with user feat. [Donald McLaughlin]
 - Added snippet forms. Added routes in /dashboard to perform query on
   snippets. Added startup.sh for startup so i don't have to keep
   creating virtual environments! [Donald McLaughlin]
