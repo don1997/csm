@@ -10,6 +10,12 @@
 
 <body>
     <h1>You are logged IN!</h1>
+    <p>{{snippets}}</p>
+
+    {% for snippets in snippets %}
+    <h2>{{snippets.title}}</h2>
+    <p>{{snippets.content}}</p>
+    {% endfor %}
     <a href="{{url_for('logout')}}">Press here to logout</a>
   </body>
 

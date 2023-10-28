@@ -7,6 +7,7 @@ Changelog
 
 New
 ~~~
+- Build script test! [Donald McLaughlin]
 - Added intermediate of snippet form with tempalte. [Donald McLaughlin]
 
 Other

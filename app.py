@@ -1,3 +1,5 @@
+#Test user: cat123 - password, test - password, test1,test2?
+
 from flask_migrate import Migrate
 
 from flask import Flask, render_template, url_for, redirect
@@ -88,11 +90,10 @@ class LoginForm(FlaskForm):
     submit = SubmitField('Login')
  
 
-# TODO
 class SnippetForm(FlaskForm):
-    
-    snippet = TextAreaField(validators=[InputRequired()])
-
+    title = StringField(validators=[InputRequired()], render_kw={"placeholder": "Insert Snippet Title!"})
+    content = TextAreaField(validators=[InputRequired()], render_kw={"placeholder": "//Insert Code!"})
+    submit = SubmitField('Post')
 """
 CLASS FORMS
 """
@@ -126,7 +127,8 @@ def login():
 @app.route('/dashboard',methods=['GET','POST'])
 @login_required
 def dashboard():
-    return render_template('dashboard.html')
+    snippets = Snippet.query.all()
+    return render_template('dashboard.html',snippets=snippets)
 
 @app.route('/logout', methods=["GET","POST"])
 def logout():
@@ -151,8 +153,16 @@ def register():
 def new_snippet():
     
     form = SnippetForm()
+    
+    if form.validate_on_submit():
+        snippet = Snippet(title=form.title.data,content=form.content.data,author=current_user)
+        db.session.add(snippet)
+        db.session.commit()
+        return redirect(url_for('dashboard'))
 
     return render_template('new_snippet.html',form=form)
+
+
 """
 ROUTES
 """

@@ -10,8 +10,12 @@
 
     
     <form method="POST" action"">
-      {{form.snippet}}
-    </form>
+
+     {{form.hidden_tag()}}
+     {{form.title}}
+     {{form.content}}
+     {{form.submit}}
+  </form>
 
   </body>
 
