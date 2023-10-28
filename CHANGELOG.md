@@ -2,6 +2,23 @@ Changelog
 =========
 
 
+0.3.0 (2023-10-28)
+------------------
+
+New
+~~~
+- Added Model for Snippet, Added user-snippet relation, Added Flask-
+  Migrate, Change: Migrated db for new models, Test: Entered in
+  username=test1 (id=2) for testing in flask shell NOTE: contains plain
+  text password! [Donald McLaughlin]
+
+Other
+~~~~~
+- Chore: Update README. [Donald McLaughlin]
+- Chore: add startup steps. [Donald McLaughlin]
+- Chore: tags, cl. [Donald McLaughlin]
+
+
 0.2.0 (2023-10-26)
 ------------------
 
