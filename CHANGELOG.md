@@ -7,6 +7,9 @@ Changelog
 
 New
 ~~~
+- Added snippet forms. Added routes in /dashboard to perform query on
+  snippets. Added startup.sh for startup so i don't have to keep
+  creating virtual environments! [Donald McLaughlin]
 - Build script test! [Donald McLaughlin]
 - Added intermediate of snippet form with tempalte. [Donald McLaughlin]
 
