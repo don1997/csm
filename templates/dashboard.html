@@ -16,6 +16,8 @@
     <p> Hi {{ current_user.username }}! [{{current_user.id}}]</p>
 {% endif %}
 
+    <a href="{{url_for('new_snippet')}}"> New Snippet</a>
+
     {% for snippets in snippets %}
     <h2>{{snippets.title}}</h2>
     <p>{{snippets.content}}</p>
