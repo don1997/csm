@@ -19,7 +19,7 @@
     <a href="{{url_for('new_snippet')}}"> New Snippet</a>
 
     {% for snippets in snippets %}
-    <h2>{{snippets.title}}</h2>
+    <h2>{{snippets.title}} [{{snippets.id}}]</h2>
     <p>{{snippets.content}}</p>
     {% endfor %}
     <a href="{{url_for('logout')}}">Press here to logout</a>
