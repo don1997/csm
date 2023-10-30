@@ -7,6 +7,8 @@ Changelog
 
 New
 ~~~
+- Added delete and edit snippet ops with corresponding templates.
+  [Donald McLaughlin]
 - Added buttons /teamplates in to navigate easier between /snippet/new
   and /dashboard. [Donald McLaughlin]
 - Added specific user/id to dashboard.html as well as list all snippets
