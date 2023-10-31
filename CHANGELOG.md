@@ -4,6 +4,14 @@ Changelog
 
 (unreleased)
 ------------
+
+Fix
+~~~
+- Added some login_req decorators and more security around crud ops.
+  [Donald McLaughlin]
+
+Other
+~~~~~
 - Chore: add tag 0.4.0. [Donald McLaughlin]
 
 
