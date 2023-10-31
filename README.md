@@ -56,3 +56,6 @@ once feature works!
 git checkout master #switch to master
 git merge v0.1.0 #merge v0.1.0 to master
 git push origin master #push changes!
+
+### TODO When moving to next phase
+* Update build script to reflect branch to submit to.
