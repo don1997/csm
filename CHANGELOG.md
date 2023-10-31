@@ -2,6 +2,11 @@ Changelog
 =========
 
 
+(unreleased)
+------------
+- Chore: add tag 0.4.0. [Donald McLaughlin]
+
+
 0.4.0 (2023-10-30)
 ------------------
 

@@ -2,7 +2,7 @@
 
 from flask_migrate import Migrate
 
-from flask import Flask, render_template, url_for, redirect,request
+from flask import Flask, render_template, url_for, redirect,request,abort
 from flask_sqlalchemy import SQLAlchemy
 from flask_login import UserMixin, login_user, LoginManager, login_required, logout_user, current_user
 
@@ -151,6 +151,7 @@ def register():
     return render_template('register.html',form=form)
 
 @app.route('/snippet/new', methods=['GET','POST'])
+@login_required
 def new_snippet():
     
     form = SnippetForm()
@@ -165,9 +166,13 @@ def new_snippet():
 
 
 @app.route('/snippet/<int:id>/edit', methods=['GET','POST'])
+@login_required
 def edit_snippet(id):
-   
+     
     snippet = Snippet.query.get_or_404(id)
+    
+    if snippet.author != current_user:
+        abort(403) 
 
     form = SnippetForm(obj=snippet)
 
@@ -183,9 +188,13 @@ def edit_snippet(id):
 
 
 @app.route('/snippet/<int:id>/delete', methods=['GET','POST'])
+@login_required
 def delete_snippet(id):
-   
+  
     snippet = Snippet.query.get_or_404(id)
+
+    if snippet.author != current_user:
+        abort(403) 
     db.session.delete(snippet)
     db.session.commit()
     return redirect(url_for('dashboard'))
