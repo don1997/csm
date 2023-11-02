@@ -37,9 +37,9 @@ gitchangelog > CHANGELOG.md
 ### Goal
 Create prototyp with the following features:
 * User auth x
-* DB Design and CRUD 
-* user-snippet relationship
-* Basic front end app to put it all together.
+* DB Design and CRUD X 
+* user-snippet relationship X
+* Basic front end app to put it all together. ~
 
 ---
 
@@ -59,3 +59,22 @@ git push origin master #push changes!
 
 ### TODO When moving to next phase
 * Update build script to reflect branch to submit to.
+### PLAN next
+
+BACKEND
+1. Refactor Backend into Lib
+2. Add Documentation while refactor
+3. Implement Next App feats
+    * Search 
+    * Tags
+4. Add Unit testing
+5. Windows run and scripts
+6. Look into adding docker to prototype build
+FRONTEND
+
+1. Bootstrap learn
+2. Js front end
+
+
+
+
