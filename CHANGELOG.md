@@ -12,6 +12,8 @@ Fix
 
 Other
 ~~~~~
+- Test: test build.sh to see whether it updates changelog. [Donald
+  McLaughlin]
 - Chore: Add img/ for present. [Donald McLaughlin]
 - Chore: Update README.md. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]

@@ -30,6 +30,10 @@ echo "Pushed to GitHub successfully!"
 
 # For updating changelog since changelog updates are only visible after the 
 # the commit has taken place
+
+#update changelog to see commit 
+gitchangelog > CHANGELOG.md
+
 git add .
 
 git commit -m "Chore: cl"
