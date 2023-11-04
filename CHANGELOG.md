@@ -12,6 +12,7 @@ Fix
 
 Other
 ~~~~~
+- Test: Alright should work this time. [Donald McLaughlin]
 - Test: test build.sh to see whether it updates changelog. [Donald
   McLaughlin]
 - Chore: Add img/ for present. [Donald McLaughlin]
