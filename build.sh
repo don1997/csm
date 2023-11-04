@@ -27,3 +27,13 @@ git commit -m "$commit_message"
 git push origin v0.1.0
 
 echo "Pushed to GitHub successfully!"
+
+# For updating changelog since changelog updates are only visible after the 
+# the commit has taken place
+git add .
+
+git commit -m "Chore: cl"
+
+git push origin v0.1.0
+
+echo "Changelog updated Successfully!"

@@ -12,6 +12,9 @@ Fix
 
 Other
 ~~~~~
+- Chore: Add img/ for present. [Donald McLaughlin]
+- Chore: Update README.md. [Donald McLaughlin]
+- Chore: cl. [Donald McLaughlin]
 - Chore: add tag 0.4.0. [Donald McLaughlin]
 
 
