@@ -1,4 +1,5 @@
-# CSM v0.1.0  
+# CSM v0.5.0 
+## Note: Fix build scripts
 
 ```bash
 $ flask run
