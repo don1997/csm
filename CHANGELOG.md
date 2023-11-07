@@ -5,6 +5,10 @@ Changelog
 (unreleased)
 ------------
 
+New
+~~~
+- Added Skel for refactor. [Donald McLaughlin]
+
 Fix
 ~~~
 - Added some login_req decorators and more security around crud ops.
