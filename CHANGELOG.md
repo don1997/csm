@@ -7,6 +7,7 @@ Changelog
 
 New
 ~~~
+- Added branch v0.5.0. [Donald McLaughlin]
 - Added Skel for refactor. [Donald McLaughlin]
 
 Fix
@@ -16,6 +17,7 @@ Fix
 
 Other
 ~~~~~
+- Chore: cl. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]
 - Test: Alright should work this time. [Donald McLaughlin]
 - Test: test build.sh to see whether it updates changelog. [Donald
