@@ -17,6 +17,7 @@ Fix
 
 Other
 ~~~~~
+- Test: build script. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]
 - Test: Alright should work this time. [Donald McLaughlin]
