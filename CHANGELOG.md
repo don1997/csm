@@ -12,6 +12,7 @@ Fix
 
 Other
 ~~~~~
+- Chore: cl. [Donald McLaughlin]
 - Test: Alright should work this time. [Donald McLaughlin]
 - Test: test build.sh to see whether it updates changelog. [Donald
   McLaughlin]
