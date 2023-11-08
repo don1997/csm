@@ -71,7 +71,7 @@ Now we have the software to finally install and run our project. Next we need to
 2. Run the command in the directory you wish to store your repos `git clone https://github.com/don1997/csm.git`
 3. Now cd into our newly cloned repo. 
 4. Run the command `git checkout v0.5.0` to switch our dev branch.
-5. Use `git branch`
+5. Use `git branch` to verify that you are on the correct branch.
 ## Setting up our Github Project
 Alright so now we have our package manager, packages, and even our project. Next we need to run the project. Unfortunately there is a little bit to do since going from Linux->Windows wasn't as straightforward as i thought. 
 
