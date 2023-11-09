@@ -66,7 +66,7 @@ As you can see we added -y to the end of this command. This allows us to automat
 Now we have the software to finally install and run our project. Next we need to clone our repo.
 
 1. For organizational purposes lets make a new directory to store our Cloned repos.
-   1. If you want to do all of this in the terminal then simply open up a new powershell instance and use `mkdir Clones`. This will create a Clones directory in your \Users directory. Then simply `cd Clones` and you should be good to do the next step.
+   1. If you want to do all of this in the terminal then simply open up a new powershell instance and use `mkdir Clones`(Note: Do not make folders/files or edit anything in \System32.). This will create a Clones directory in your \Users directory. Then simply `cd Clones` and you should be good to do the next step.
     ![image](make_Clones.PNG)
 2. Run the command in the directory you wish to store your repos `git clone https://github.com/don1997/csm.git`
 3. Now cd into our newly cloned repo. 
