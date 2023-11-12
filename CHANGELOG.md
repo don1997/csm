@@ -7,6 +7,8 @@ Changelog
 
 New
 ~~~
+- Correctly updated src/ this time with refactored changes. [Donald
+  McLaughlin]
 - Refactored into folders starting with src/. Added Blueprints to routes
   and templates. > Delete old app.py and database.db. Update build
   scripts. [Donald McLaughlin]
@@ -21,6 +23,8 @@ Fix
 
 Other
 ~~~~~
+- Test. [Donald McLaughlin]
+- Chore: cl. [Donald McLaughlin]
 - Chore: fix tut. [Donald McLaughlin]
 - Chore: fix tut. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]

@@ -5,7 +5,7 @@ cd /home/donald/Projects/csm
 
 source venv/bin/activate
 
-flask run
+python3 src/run.py
 
 deactivate
 
