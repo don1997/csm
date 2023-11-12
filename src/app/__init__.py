@@ -20,8 +20,8 @@ def create_app():
     login_manager.init_app(app)
     migrate.init_app(app, db)
 
-    from app.models import User
-    from app.views import main as main_blueprint
+    from .models import User
+    from .views import main as main_blueprint
 
     app.register_blueprint(main_blueprint)
 
