@@ -7,6 +7,7 @@ Changelog
 
 New
 ~~~
+- Removed old files from refactor. [Donald McLaughlin]
 - Correctly updated src/ this time with refactored changes. [Donald
   McLaughlin]
 - Refactored into folders starting with src/. Added Blueprints to routes
