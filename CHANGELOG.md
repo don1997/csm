@@ -7,6 +7,7 @@ Changelog
 
 New
 ~~~
+- Added resources. [Donald McLaughlin]
 - Added branch v0.5.0. [Donald McLaughlin]
 - Added Skel for refactor. [Donald McLaughlin]
 
@@ -17,6 +18,9 @@ Fix
 
 Other
 ~~~~~
+- Chore: fix tut. [Donald McLaughlin]
+- Chore: fix tut. [Donald McLaughlin]
+- Chore: cl. [Donald McLaughlin]
 - Test: build script. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]
