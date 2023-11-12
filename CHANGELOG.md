@@ -7,6 +7,9 @@ Changelog
 
 New
 ~~~
+- Refactored into folders starting with src/. Added Blueprints to routes
+  and templates. > Delete old app.py and database.db. Update build
+  scripts. [Donald McLaughlin]
 - Added resources. [Donald McLaughlin]
 - Added branch v0.5.0. [Donald McLaughlin]
 - Added Skel for refactor. [Donald McLaughlin]
