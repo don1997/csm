@@ -1,6 +1,7 @@
 # tests/conftest.py
 import pytest
 from src.app import create_app, db
+from src.app.models import User
 
 @pytest.fixture(scope='module')
 def test_app():
@@ -27,3 +28,13 @@ def test_app():
 def client(test_app):
     return test_app.test_client()
 
+@pytest.fixture(scope='module')
+def new_user(test_app):
+    """
+    Create a user for the tests.
+    """
+    with test_app.app_context():
+        user = User(username='testuser', password='testpassword')
+        db.session.add(user)
+        db.session.commit()
+    return user
