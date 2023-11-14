@@ -3,7 +3,7 @@ from flask_login import login_user, login_required, logout_user, current_user
 from . import db, bcrypt
 from .models import User, Snippet
 from .forms import LoginForm, RegisterForm, SnippetForm
-
+from flask import flash
 main = Blueprint('main', __name__)
 
 @main.route('/')
@@ -24,7 +24,6 @@ def login():
 
 
     return render_template('login.html', form=form)
-
 
 @main.route('/dashboard',methods=['GET','POST'])
 @login_required

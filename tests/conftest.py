@@ -28,13 +28,16 @@ def test_app():
 def client(test_app):
     return test_app.test_client()
 
+from src.app import bcrypt
+
 @pytest.fixture(scope='module')
 def new_user(test_app):
     """
-    Create a user for the tests.
+    Create a user for the tests with a plain text password.
     """
     with test_app.app_context():
         user = User(username='testuser', password='testpassword')
         db.session.add(user)
         db.session.commit()
-    return user
+        return user
+    
