@@ -12,8 +12,13 @@ New
 - More test. [Donald McLaughlin]
 - Added Unit testing and some of the setup for it. [Donald McLaughlin]
 
+Fix
+~~~
+- Removed Greenlet from requirements.txt. [Donald McLaughlin]
+
 Other
 ~~~~~
+- Chore: cl. [Donald McLaughlin]
 - Chore: New changes to changelog. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]
 
