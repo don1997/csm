@@ -41,3 +41,25 @@ def new_user(test_app):
         db.session.commit()
         return user
     
+@pytest.fixture(scope='function')
+def session(test_app):
+    """Provides an isolated database session for each test."""
+    # Push an application context to bind the SQLAlchemy object to your app
+    context = test_app.app_context()
+    context.push()
+
+    connection = db.engine.connect()
+    transaction = connection.begin()
+
+    options = dict(bind=connection, binds={})
+    session = db.create_scoped_session(options=options)
+
+    db.session = session
+
+    yield session
+
+    session.remove()
+    transaction.rollback()
+    connection.close()
+
+    context.pop()
