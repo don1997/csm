@@ -14,6 +14,7 @@ New
 
 Other
 ~~~~~
+- Chore: New changes to changelog. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]
 
 
