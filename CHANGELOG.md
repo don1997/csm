@@ -2,6 +2,21 @@ Changelog
 =========
 
 
+(unreleased)
+------------
+
+New
+~~~
+- Added more unit test stuff and venv script. [Donald McLaughlin]
+- Added unit tests for login and conftest changes. [Donald McLaughlin]
+- More test. [Donald McLaughlin]
+- Added Unit testing and some of the setup for it. [Donald McLaughlin]
+
+Other
+~~~~~
+- Chore: cl. [Donald McLaughlin]
+
+
 0.5.0 (2023-11-12)
 ------------------
 
