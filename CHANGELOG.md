@@ -2,6 +2,18 @@ Changelog
 =========
 
 
+(unreleased)
+------------
+
+New
+~~~
+- Moved to v0.6.0 for next set of feats. [Donald McLaughlin]
+
+Other
+~~~~~
+- Change: updated scripts: [Donald McLaughlin]
+
+
 0.6.0 (2023-11-17)
 ------------------
 
