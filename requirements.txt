@@ -25,3 +25,4 @@ zipp==3.8.0
 Flask-Migrate
 pytest
 flask_testing
+flask-bootstrap

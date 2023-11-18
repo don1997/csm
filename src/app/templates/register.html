@@ -1,6 +1,8 @@
+{% extends "base.html" %}
 <!DOCTYPE html>
 <html lang="en">
 
+{% block title %}
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
@@ -8,6 +10,9 @@
     <title>Register</title>
 </head>
 
+{% endblock %}
+
+{% block content %}
 <body>
     <h1>Register Page</h1>
     
@@ -22,4 +27,5 @@
     <a href="{{url_for('main.login')}}">Already have an account? </a><br>
 </body>
 
+{% endblock %}
 </html>

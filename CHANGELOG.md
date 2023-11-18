@@ -12,6 +12,7 @@ New
 
 Other
 ~~~~~
+- Chore: cl. [Donald McLaughlin]
 - Change: updated scripts: [Donald McLaughlin]
 
 
