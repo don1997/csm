@@ -7,6 +7,8 @@ Changelog
 
 New
 ~~~
+- Added flask-bootstrap, Created base.html, and updated main templates.
+  [Donald McLaughlin]
 - Started fleshing out front-end dirs. [Donald McLaughlin]
 - Moved to v0.6.0 for next set of feats. [Donald McLaughlin]
 
