@@ -7,6 +7,8 @@ Changelog
 
 New
 ~~~
+- Added my_base.html template and begin using bootstrap templating into
+  project. [Donald McLaughlin]
 - Added flask-bootstrap, Created base.html, and updated main templates.
   [Donald McLaughlin]
 - Started fleshing out front-end dirs. [Donald McLaughlin]
