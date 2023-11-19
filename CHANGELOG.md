@@ -7,6 +7,7 @@ Changelog
 
 New
 ~~~
+- Added Flask-Bootstrap macro to login successfully. [Donald McLaughlin]
 - Added my_base.html template and begin using bootstrap templating into
   project. [Donald McLaughlin]
 - Added my_base.html template and begin using bootstrap templating into
