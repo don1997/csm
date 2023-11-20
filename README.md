@@ -73,6 +73,10 @@ FRONTEND
 1. Bootstrap learn x
 2. Js front end
 
+## Using Alembic
 
+1. Ensure path to project is correct in this case: $ export FLASK_APP=src/run.py
 
+2. $ flask db migrate -m "Your feature description"
+3. flask db upgrade
 
