@@ -1,9 +1,6 @@
 # CSM v0.6.0 
 ## Note: Fix build scripts
 
-```bash
-$ flask run
-```
 ## gitchangelog 
     New: for introducing a new feature.
     Fix: for a bug fix.
@@ -40,7 +37,7 @@ Create prototyp with the following features:
 * User auth x
 * DB Design and CRUD X 
 * user-snippet relationship X
-* Basic front end app to put it all together. ~
+* Basic front end app to put it all together. x
 
 ---
 
@@ -63,17 +60,17 @@ git push origin master #push changes!
 ### PLAN next
 
 BACKEND
-1. Refactor Backend into Lib
+1. Refactor Backend into Lib x
 2. Add Documentation while refactor
 3. Implement Next App feats
-    * Search 
+    * Search ~ 
     * Tags
-4. Add Unit testing
-5. Windows run and scripts
+4. Add Unit testing x
+5. Windows run and scripts x
 6. Look into adding docker to prototype build
 FRONTEND
 
-1. Bootstrap learn
+1. Bootstrap learn x
 2. Js front end
 
 

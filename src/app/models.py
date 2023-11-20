@@ -2,6 +2,12 @@ from . import db
 from flask_login import UserMixin
 from datetime import datetime
 
+
+
+snippet_tags = db.Table('snippet_tags',
+    db.Column('snippet_id', db.Integer, db.ForeignKey('snippet.id'), primary_key=True),
+    db.Column('tag_id', db.Integer, db.ForeignKey('tag.id'), primary_key=True))
+    
 class User(db.Model, UserMixin):
     id = db.Column(db.Integer, primary_key=True)
     #unique=True: Two users cannot have same name
@@ -20,3 +26,9 @@ class Snippet(db.Model):
     date_posted=db.Column(db.DateTime, nullable=False, default=datetime.utcnow)
     #userid
     user_id = db.Column(db.Integer, db.ForeignKey('user.id', name='fk_user_id') ,nullable=False)
+    # Many-to-many relationship with Tag
+    tags = db.relationship('Tag', secondary=snippet_tags, lazy='subquery',backref=db.backref('snippets', lazy=True))
+
+class Tag(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    title = db.Column(db.String(50), unique=True, nullable=False)
