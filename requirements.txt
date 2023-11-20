@@ -26,3 +26,4 @@ Flask-Migrate
 pytest
 flask_testing
 flask-bootstrap
+Pygments

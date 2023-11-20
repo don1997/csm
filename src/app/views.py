@@ -4,6 +4,13 @@ from . import db, bcrypt
 from .models import User, Snippet
 from .forms import LoginForm, RegisterForm, SnippetForm
 from flask import flash
+
+
+from pygments import highlight
+from pygments.lexers import PythonLexer
+from pygments.formatters import HtmlFormatter
+
+
 main = Blueprint('main', __name__)
 
 @main.route('/')
@@ -25,13 +32,52 @@ def login():
 
     return render_template('login.html', form=form)
 
-@main.route('/dashboard',methods=['GET','POST'])
-@login_required
-def dashboard():
-    #snippets = Snippet.query.all()
-    snippets=current_user.snippets
-    return render_template('dashboard.html',snippets=snippets)
 
+"""
+
+@main.route('/dashboard', defaults={'snippet_id': None})
+@main.route('/dashboard/<int:snippet_id>')
+@login_required
+def dashboard(snippet_id):
+    # Retrieve all snippets for the current user
+    snippets = current_user.snippets
+    # If a snippet ID is provided, retrieve the specific snippet, otherwise None
+    selected_snippet = Snippet.query.filter_by(id=snippet_id, user_id=current_user.id).first() if snippet_id else None
+    
+    return render_template('dashboard.html', snippets=snippets, selected_snippet=selected_snippet)
+
+"""
+
+from pygments import highlight
+from pygments.lexers import PythonLexer
+from pygments.formatters import HtmlFormatter
+from pygments.lexers import get_lexer_by_name
+
+
+@main.route('/dashboard', defaults={'snippet_id': None})
+@main.route('/dashboard/<int:snippet_id>')
+@login_required
+def dashboard(snippet_id):
+    snippets = current_user.snippets
+    selected_snippet = None
+    highlighted_code = ""
+    styles = ""
+    if snippet_id:
+        selected_snippet = Snippet.query.filter_by(id=snippet_id, user_id=current_user.id).first()
+        if selected_snippet:
+            # Assuming the language is Python, change 'python' to the appropriate language if necessary
+            #lexer = get_lexer_by_name('python', stripall=True)
+            #formatter = HtmlFormatter(linenos=True, cssclass="source")
+            #code = 'print("Hello, World!")\ndef recur_factorial(n):\nif n == 1:\nreturn n\nelse:\nreturn n*recur_factorial(n-1)'
+
+            highlighted_code = highlight(selected_snippet.content, PythonLexer(), HtmlFormatter())
+    return render_template(
+        'dashboard.html',
+        snippets=snippets,
+        selected_snippet=selected_snippet,
+        highlighted_code=highlighted_code,
+        styles=styles
+    )
 @main.route('/logout', methods=["GET","POST"])
 def logout():
     logout_user()
@@ -100,3 +146,11 @@ def delete_snippet(id):
     db.session.commit()
     return redirect(url_for('main.dashboard'))
 
+
+
+
+@main.route("/test")
+def test():
+    code = 'print("Hello, World!")\ndef recur_factorial(n):\nif n == 1:\nreturn n\nelse:\nreturn n*recur_factorial(n-1)'
+    highlighted_code = highlight(code, PythonLexer(), HtmlFormatter())
+    return render_template('test.html', highlighted_code=highlighted_code)
