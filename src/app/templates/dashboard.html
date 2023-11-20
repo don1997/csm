@@ -1,17 +1,22 @@
 {% extends "my_base.html" %}
 
-<link rel="stylesheet" href="{{ url_for('static', filename='pygments.css') }}">
 
 
 
 
 {% block content %}
+<link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
+
+<link rel="stylesheet" href="{{ url_for('static', filename='pygments.css') }}">
 
 
 
 <div class="container-fluid">
     <!--NEEDED FOR TEST!-->
     <p>You are logged IN!</p>
+    <a href="{{url_for('main.new_snippet')}}"> New Snippet</a><br>
+    <a href="{{url_for('main.logout')}}">Press here to logout</a><br>
+
 
     <div class="row">
         <!-- Sidebar with Snippets -->
@@ -26,24 +31,10 @@
             </div>
         </div>
 
-        <!-- Main content area -->
-        <!--
-        <div class="col-md-8 col-lg-9">
-            <div class="card">
-                <div class="card-body">
-                    {% if selected_snippet %}
-                    <h3>{{ selected_snippet.title }}</h3>
-                    <pre><code>{{ selected_snippet.content }}</code></pre>
-                    {% else %}
-                    <p>Select a snippet from the list to view its content here.</p>
-                    {% endif %}
-                </div>
-            </div>
-        </div>
-    -->
     <div class="col-md-8 col-lg-9">
-        <div class="card">
-            <div class="card-body">
+        <div class="card border">
+            <div class="custom-highlight">
+
                 {% if selected_snippet %}
                 <h3>{{ selected_snippet.title }}</h3>
                 <!-- Render the highlighted code -->
@@ -54,9 +45,8 @@
             </div>
         </div>
     </div>
-    
     </div>
 </div>
-{{ highlighted_code | safe }}
+
 
 {% endblock %}
