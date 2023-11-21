@@ -7,6 +7,9 @@ Changelog
 
 New
 ~~~
+- Added a whole host of things to front end including templates, css,
+  boostrap components, and proper links for ops,syntax highlighting,
+  forms modifications,  Now has usable front end. [Donald McLaughlin]
 - Added tag models. [Donald McLaughlin]
 - Added Flask-Bootstrap macro to login successfully. [Donald McLaughlin]
 - Added my_base.html template and begin using bootstrap templating into
