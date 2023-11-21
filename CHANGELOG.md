@@ -23,6 +23,8 @@ New
 
 Other
 ~~~~~
+- Found error and edit forms. [Donald McLaughlin]
+- Chore: cl. [Donald McLaughlin]
 - Fixed some front stuff. [Donald McLaughlin]
 - Fixed flickering boostrap and css. [Donald McLaughlin]
 - Working dash. [Donald McLaughlin]
