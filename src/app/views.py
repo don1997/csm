@@ -50,11 +50,7 @@ def dashboard(snippet_id):
     if snippet_id:
         selected_snippet = Snippet.query.filter_by(id=snippet_id, user_id=current_user.id).first()
         if selected_snippet:
-            # Assuming the language is Python, change 'python' to the appropriate language if necessary
-            #lexer = get_lexer_by_name('python', stripall=True)
-            #formatter = HtmlFormatter(linenos=True, cssclass="source")
-            #code = 'print("Hello, World!")\ndef recur_factorial(n):\nif n == 1:\nreturn n\nelse:\nreturn n*recur_factorial(n-1)'
-
+        
             highlighted_code = highlight(selected_snippet.content, PythonLexer(), HtmlFormatter())
     return render_template(
         'dashboard.html',
