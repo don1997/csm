@@ -33,21 +33,6 @@ def login():
     return render_template('login.html', form=form)
 
 
-"""
-
-@main.route('/dashboard', defaults={'snippet_id': None})
-@main.route('/dashboard/<int:snippet_id>')
-@login_required
-def dashboard(snippet_id):
-    # Retrieve all snippets for the current user
-    snippets = current_user.snippets
-    # If a snippet ID is provided, retrieve the specific snippet, otherwise None
-    selected_snippet = Snippet.query.filter_by(id=snippet_id, user_id=current_user.id).first() if snippet_id else None
-    
-    return render_template('dashboard.html', snippets=snippets, selected_snippet=selected_snippet)
-
-"""
-
 from pygments import highlight
 from pygments.lexers import PythonLexer
 from pygments.formatters import HtmlFormatter
@@ -97,7 +82,7 @@ def register():
 
     return render_template('register.html',form=form)
 
-@main.route('/snippet/new', methods=['GET','POST'])
+@main.route('/dashboard/new', methods=['GET','POST'])
 @login_required
 def new_snippet():
     
@@ -112,7 +97,7 @@ def new_snippet():
     return render_template('new_snippet.html',form=form)
 
 
-@main.route('/snippet/<int:id>/edit', methods=['GET','POST'])
+@main.route('/dashboard/<int:id>/edit', methods=['GET','POST'])
 @login_required
 def edit_snippet(id):
      
@@ -134,7 +119,7 @@ def edit_snippet(id):
     return render_template('edit_snippet.html',form=form)
 
 
-@main.route('/snippet/<int:id>/delete', methods=['GET','POST'])
+@main.route('/dashboard/<int:id>/delete', methods=['GET','POST'])
 @login_required
 def delete_snippet(id):
   
@@ -154,3 +139,4 @@ def test():
     code = 'print("Hello, World!")\ndef recur_factorial(n):\nif n == 1:\nreturn n\nelse:\nreturn n*recur_factorial(n-1)'
     highlighted_code = highlight(code, PythonLexer(), HtmlFormatter())
     return render_template('test.html', highlighted_code=highlighted_code)
+

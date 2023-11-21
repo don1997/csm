@@ -1,5 +1,5 @@
 <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
-
+<link rel="stylesheet" href="{{ url_for('static', filename='pygments.css') }}">
 {% extends "my_base.html" %}
 
 
@@ -7,16 +7,23 @@
 
 
 {% block main %}
-<link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
 
-<link rel="stylesheet" href="{{ url_for('static', filename='pygments.css') }}">
-
-
+   <!--BOOTSTRAP EXPERIMENT-->
+   <div class="dropdown-menu">
+    <h6 class="dropdown-header">Dropdown header</h6>
+    <a class="dropdown-item" href="#">Action</a>
+    <a class="dropdown-item" href="#">Another action</a>
+  </div>
+  <!--BOOTSTRAP EXPERIMENT-->
 
 <div class="container-fluid">
     <!--NEEDED FOR TEST!-->
     <p>You are logged IN!</p>
     <a href="{{url_for('main.new_snippet')}}"> New Snippet</a><br>
+    {%if selected_snippet%}
+        <a href="{{url_for('main.edit_snippet', id=selected_snippet.id)}}"> Edit Snippet</a><br>
+        <a href="{{url_for('main.delete_snippet', id=selected_snippet.id)}}"> Delete Snippet</a><br>
+    {%endif%}
     <a href="{{url_for('main.logout')}}">Press here to logout</a><br>
 
 
@@ -38,6 +45,8 @@
             <div class="custom-highlight">
 
                 {% if selected_snippet %}
+                
+
                 <h3>{{ selected_snippet.title }}</h3>
                 <!-- Render the highlighted code -->
                 {{ highlighted_code | safe }}
