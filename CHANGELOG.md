@@ -7,6 +7,7 @@ Changelog
 
 New
 ~~~
+- Added tag models. [Donald McLaughlin]
 - Added Flask-Bootstrap macro to login successfully. [Donald McLaughlin]
 - Added my_base.html template and begin using bootstrap templating into
   project. [Donald McLaughlin]
@@ -19,6 +20,13 @@ New
 
 Other
 ~~~~~
+- Fixed some front stuff. [Donald McLaughlin]
+- Fixed flickering boostrap and css. [Donald McLaughlin]
+- Working dash. [Donald McLaughlin]
+- Success! Alembic migration worked! [Donald McLaughlin]
+- Working on syntax highlight feat and dashboard struct. [Donald
+  McLaughlin]
+- Chore: cl. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]
