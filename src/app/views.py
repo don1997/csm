@@ -89,6 +89,10 @@ def new_snippet():
     form = SnippetForm()
     
     if form.validate_on_submit():
+        existing_snippet = Snippet.query.filter_by(title=form.title.data, user_id=current_user.id).first()
+        if existing_snippet:
+            flash('Snippet title already exists. Enter unique title')
+            return render_template('new_snippet.html',form=form)
         snippet = Snippet(title=form.title.data,content=form.content.data,author=current_user)
         db.session.add(snippet)
         db.session.commit()
