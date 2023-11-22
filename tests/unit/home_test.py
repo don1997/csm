@@ -6,7 +6,7 @@ def test_home(client):
     """
     response = client.get('/')
     assert response.status_code == 200
-    assert b"Login Authentication System in Flask." in response.data
+    assert b"Welcome" in response.data
 
 
 

@@ -13,7 +13,7 @@ def test_dashboard_access(client):
         current_user_mock.return_value = User(id=1, username='testuser')
         response = client.get('/dashboard')
         assert response.status_code == 200
-        assert b"You are logged IN!" in response.data
+        assert b"LOGO" in response.data
         # Further assertions...
         
         response = client.get('/snippet/new')

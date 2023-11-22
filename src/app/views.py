@@ -77,15 +77,19 @@ def new_snippet():
     
     form = SnippetForm()
     
-    if form.validate_on_submit():
-        existing_snippet = Snippet.query.filter_by(title=form.title.data, user_id=current_user.id).first()
-        if existing_snippet:
-            flash('Snippet title already exists. Enter unique title')
-            return render_template('new_snippet.html',form=form)
-        snippet = Snippet(title=form.title.data,content=form.content.data,author=current_user)
-        db.session.add(snippet)
-        db.session.commit()
-        return redirect(url_for('main.dashboard'))
+    try:
+        if form.validate_on_submit():
+            existing_snippet = Snippet.query.filter_by(title=form.title.data, user_id=current_user.id).first()
+            if existing_snippet:
+                flash('Snippet title already exists. Enter unique title')
+                return render_template('new_snippet.html',form=form)
+            snippet = Snippet(title=form.title.data,content=form.content.data,author=current_user)
+            db.session.add(snippet)
+            db.session.commit()
+            return redirect(url_for('main.dashboard'))
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        flash("An errror occurred while creating the snippet. PLease try again.", "error")
 
     return render_template('new_snippet.html',form=form)
 
@@ -122,10 +126,17 @@ def edit_snippet(id):
 @main.route('/dashboard/<int:id>/delete', methods=['GET','POST'])
 @login_required
 def delete_snippet(id):
-    snippet = Snippet.query.get_or_404(id)
+    try:
+        snippet = Snippet.query.get_or_404(id)
 
-    if snippet.author != current_user:
-        abort(403) 
-    db.session.delete(snippet)
-    db.session.commit()
+        if snippet.author != current_user:
+            abort(403) 
+        db.session.delete(snippet)
+        db.session.commit()
+    
+    except Exception as e:
+        print(f"An error occurred: {e}")
+        flash("An error occurred while deleting the snippet. PLease try again.", "error")
+
     return redirect(url_for('main.dashboard'))
+    
