@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-(unreleased)
-------------
+0.6.2 (2023-11-22)
+------------------
 
 New
 ~~~
@@ -25,6 +25,7 @@ New
 
 Other
 ~~~~~
+- Chore: cl. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]
 - Fixed Edit_snippet dupes, Cleaned dirs and files, Fixed flashing to
   work. [Donald McLaughlin]
