@@ -2,6 +2,11 @@ Changelog
 =========
 
 
+(unreleased)
+------------
+- Chore: cl. [Donald McLaughlin]
+
+
 0.6.2 (2023-11-22)
 ------------------
 
