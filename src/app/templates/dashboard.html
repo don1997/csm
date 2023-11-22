@@ -8,6 +8,8 @@
 
 {% block main %}
 
+<h2> Hi {{ current_user.username }}! [{{current_user.id}}]</h2>
+
    <!--BOOTSTRAP EXPERIMENT-->
    <div class="dropdown-menu">
     <h6 class="dropdown-header">Dropdown header</h6>
@@ -48,6 +50,7 @@
                 
 
                 <h3>{{ selected_snippet.title }}</h3>
+                <h5>{{ selected_snippet.date_posted}} </h5>
                 <!-- Render the highlighted code -->
                 {{ highlighted_code | safe }}
                 {% else %}

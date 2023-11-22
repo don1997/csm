@@ -109,8 +109,10 @@ def edit_snippet(id):
     form = SnippetForm(obj=snippet)
 
     if form.validate_on_submit():
+            
         snippet.title = form.title.data
         snippet.content = form.content.data
+
         db.session.commit()
         return redirect(url_for('main.dashboard'))
     if request.method=='GET':

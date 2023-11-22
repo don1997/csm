@@ -1,8 +1,10 @@
 from flask_wtf import FlaskForm
 from wtforms import StringField, PasswordField, TextAreaField, SubmitField
 from wtforms.validators import InputRequired, Length, ValidationError
-from .models import User
+from .models import User, Snippet
 from . import db
+from flask_login import current_user
+
 
 class RegisterForm(FlaskForm):
     username = StringField(validators=[
@@ -29,6 +31,9 @@ class LoginForm(FlaskForm):
 
     submit = SubmitField('Login')
  
+
+
+
 
 class SnippetForm(FlaskForm):
     title = StringField(validators=[InputRequired()], render_kw={"placeholder": "Insert Snippet Title!"})
