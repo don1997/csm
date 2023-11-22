@@ -25,6 +25,7 @@ New
 
 Other
 ~~~~~
+- Chore: cl. [Donald McLaughlin]
 - Fixed Edit_snippet dupes, Cleaned dirs and files, Fixed flashing to
   work. [Donald McLaughlin]
 - Working copy. [Donald McLaughlin]
