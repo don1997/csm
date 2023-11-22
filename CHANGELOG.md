@@ -4,6 +4,15 @@ Changelog
 
 (unreleased)
 ------------
+
+New
+~~~
+- Merged files/changes for testing and error handling tasks. [Donald
+  McLaughlin]
+
+Other
+~~~~~
+- Chore: cl. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]
 
 
