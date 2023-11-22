@@ -7,6 +7,8 @@ Changelog
 
 New
 ~~~
+- Fixed db model for snippet removed unique constraint as well as made
+  fresh db and migrations/ [Donald McLaughlin]
 - Added a whole host of things to front end including templates, css,
   boostrap components, and proper links for ops,syntax highlighting,
   forms modifications,  Now has usable front end. [Donald McLaughlin]
@@ -23,6 +25,13 @@ New
 
 Other
 ~~~~~
+- Fixed Edit_snippet dupes, Cleaned dirs and files, Fixed flashing to
+  work. [Donald McLaughlin]
+- Working copy. [Donald McLaughlin]
+- Added snippet. [Donald McLaughlin]
+- Fixed duplicate names in new_snippet. [Donald McLaughlin]
+- Attempt to get alembic to work. [Donald McLaughlin]
+- Chore: cl. [Donald McLaughlin]
 - Found error and edit forms. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]
 - Fixed some front stuff. [Donald McLaughlin]
