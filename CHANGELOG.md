@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-(unreleased)
-------------
+0.6.3 (2023-11-22)
+------------------
 
 New
 ~~~
@@ -12,6 +12,7 @@ New
 
 Other
 ~~~~~
+- Chore: cl. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]
 
