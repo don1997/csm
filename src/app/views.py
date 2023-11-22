@@ -17,8 +17,6 @@ main = Blueprint('main', __name__)
 def home():
     return render_template('home.html')
 
-
-
 @main.route('/login', methods=['GET','POST'])
 def login():
     form = LoginForm()
@@ -31,12 +29,6 @@ def login():
 
 
     return render_template('login.html', form=form)
-
-
-from pygments import highlight
-from pygments.lexers import PythonLexer
-from pygments.formatters import HtmlFormatter
-from pygments.lexers import get_lexer_by_name
 
 
 @main.route('/dashboard', defaults={'snippet_id': None})
@@ -59,6 +51,7 @@ def dashboard(snippet_id):
         highlighted_code=highlighted_code,
         styles=styles
     )
+    
 @main.route('/logout', methods=["GET","POST"])
 def logout():
     logout_user()
@@ -100,7 +93,6 @@ def new_snippet():
 @main.route('/dashboard/<int:id>/edit', methods=['GET','POST'])
 @login_required
 def edit_snippet(id):
-     
     snippet = Snippet.query.get_or_404(id)
     
     if snippet.author != current_user:
@@ -109,6 +101,12 @@ def edit_snippet(id):
     form = SnippetForm(obj=snippet)
 
     if form.validate_on_submit():
+        # Check if there's another snippet with the same title, excluding the current snippet
+        duplicate_snippet = Snippet.query.filter(Snippet.id != id, Snippet.title == form.title.data).first()
+        
+        if duplicate_snippet:
+            flash('A snippet with this title already exists.', 'error')
+            return render_template('edit_snippet.html', form=form)
             
         snippet.title = form.title.data
         snippet.content = form.content.data
@@ -124,7 +122,6 @@ def edit_snippet(id):
 @main.route('/dashboard/<int:id>/delete', methods=['GET','POST'])
 @login_required
 def delete_snippet(id):
-  
     snippet = Snippet.query.get_or_404(id)
 
     if snippet.author != current_user:
@@ -132,13 +129,3 @@ def delete_snippet(id):
     db.session.delete(snippet)
     db.session.commit()
     return redirect(url_for('main.dashboard'))
-
-
-
-
-@main.route("/test")
-def test():
-    code = 'print("Hello, World!")\ndef recur_factorial(n):\nif n == 1:\nreturn n\nelse:\nreturn n*recur_factorial(n-1)'
-    highlighted_code = highlight(code, PythonLexer(), HtmlFormatter())
-    return render_template('test.html', highlighted_code=highlighted_code)
-
