@@ -60,7 +60,7 @@
 
     <div class="row">
         <!-- Sidebar with Snippets -->
-        <div class="col-md-4 col-lg-3 bg-dark text-white">
+        <div class="col-md-4 col-lg-3 border-dark text-white">
             <h1 class="my-4">LOGO</h1>
             <div class="list-group">
                 {% for snippet in snippets %}
@@ -72,7 +72,7 @@
         </div>
 
     <div class="col-md-8 col-lg-9">
-        <div class="card border">
+        <div class="card border" id="code-card">
             <div class="custom-highlight">
 
                 {% if selected_snippet %}
@@ -80,8 +80,24 @@
 
                 <h3>{{ selected_snippet.title }}</h3>
                 <h5>{{ selected_snippet.date_posted}} </h5>
+
+                <!-- Hidden textarea to hold the text to be copied -->
+                <textarea id="hiddenTextarea" style="position: absolute; left: -9999px;">{{ selected_snippet.content }}</textarea>
                 <!-- Render the highlighted code -->
                 {{ highlighted_code | safe }}
+                
+                 <!-- Copy button -->
+                 <button onclick="copyToClipboard()">Copy Code</button>
+
+                 <script>
+                    function copyToClipboard() {
+                        var copyText = document.getElementById("hiddenTextarea");
+                        copyText.select();
+                        copyText.setSelectionRange(0, 99999); // For mobile devices
+                        navigator.clipboard.writeText(copyText.value);
+                        alert("Copied the code to clipboard!");
+                    }
+                    </script>
                 {% else %}
                 <p>Select a snippet from the list to view its content here.</p>
                 {% endif %}
@@ -93,3 +109,4 @@
 
 
 {% endblock %}
+

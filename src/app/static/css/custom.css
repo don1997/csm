@@ -2,11 +2,14 @@ pre {
     background-color: transparent !important; 
 }
 
+
 body {
     background-color:#5d4242;
     color: #969696;
     
 }
 
-
+#code-card{
+    background-color:#5d4242;
+}
 
