@@ -2,6 +2,29 @@ Changelog
 =========
 
 
+(unreleased)
+------------
+
+New
+~~~
+- Added delete modal and buttons for ops. [Donald McLaughlin]
+- Added latest ver of Bootstrap 5.2->5.3, Added scroll for overflow if
+  not posted already, work on delete modal. [Donald McLaughlin]
+- Added code mirror to new snippet and fixed 4 line space. [Donald
+  McLaughlin]
+- Added codemirror and a workable edit box in edit_snippet as well as
+  copy button and bootstrap stuff. [Donald McLaughlin]
+- Added bootstrap 5 css and js and comment out bootstrap 2.x in
+  my_base.html. [Donald McLaughlin]
+- Added branch v0.6.0_Bootstrap5 for Migrating app to Bootstrap5.
+  [Donald McLaughlin]
+- New: Added merged changes from tasks @ v0.6.3. [Donald McLaughlin]
+
+Other
+~~~~~
+- Workign edit snippet codemirror. [Donald McLaughlin]
+
+
 0.6.3 (2023-11-22)
 ------------------
 
