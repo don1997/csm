@@ -28,9 +28,7 @@
       {{ wtf.form_errors(form, hiddens="only") }}
       {{wtf.form_field(form.title)}}
 
-  <textarea name="content" id="content" rows="10" cols="50">
-    {{ form.content.data }}
-  </textarea>
+  <textarea name="content" id="content" rows="10" cols="50">{{ form.content.data }}</textarea>
       {{wtf.form_field(form.submit)}}
       </form>
     
