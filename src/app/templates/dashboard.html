@@ -10,32 +10,39 @@
 
 <div class="container-fluid">
     <!--NEEDED FOR TEST!-->
-    <a href="{{url_for('main.new_snippet')}}"> New Snippet</a><br>
+    <a class="btn btn-primary" role="button" href="{{url_for('main.new_snippet')}}"> New Snippet</a><br>
+    
     {%if selected_snippet%}
-        <a href="{{url_for('main.edit_snippet', id=selected_snippet.id)}}"> Edit Snippet</a><br>
-        <a href="{{url_for('main.delete_snippet', id=selected_snippet.id)}}"> Delete Snippet</a><br>
+    
+      <a class="btn btn-primary" role="button" href="{{url_for('main.edit_snippet', id=selected_snippet.id)}}"> Edit Snippet</a><br>
+
+<button class="btn btn-danger" type="button" data-toggle="modal" data-target="#exampleModalCenter">Delete</button><br>
+
+<div class="modal fade" id="exampleModalCenter" tabindex="-1" role="dialog" aria-labelledby="exampleModalCenterTitle" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered" role="document">
+    <div class="modal-content">
+      <div class="modal-header">
+        <h5 class="modal-title" id="exampleModalCenterTitle">Delete Snippet</h5>
+        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+          <span aria-hidden="true">&times;</span>
+        </button>
+      </div>
+      <div class="modal-body">
+       Are you sure you want to delete this snippet?
+      </div>
+      <div class="modal-footer">
+        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+
+          <form method="POST" action="{{ url_for('main.delete_snippet', id=selected_snippet.id) }}">
+            <button type="submit" class="btn btn-danger">Delete</button>
+          </form>
+      </div>
+    </div>
+  </div>
+</div>
 
 
-        <!-- Modal IN-PROGRESS -->
-        <div class="modal" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-          <div class="modal-dialog">
-            <div class="modal-content">
-              <div class="modal-header">
-                <h5 class="modal-title" id="exampleModalLabel">Modal title</h5>
-                <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-              </div>
-              <div class="modal-body">
-                ...
-              </div>
-              <div class="modal-footer">
-                <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-                <button type="button" class="btn btn-primary">Save changes</button>
-              </div>
-            </div>
-          </div>
-        </div>
-        <a href="#" data-bs-toggle="modal" data-bs-target="#exampleModal">MODAL-TEST</a><br>
-        <!-- Modal -->
+
 
 
 
