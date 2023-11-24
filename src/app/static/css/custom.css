@@ -13,3 +13,12 @@ body {
     background-color:#5d4242;
 }
 
+
+/* Needed for Snippet title overflow in side bar*/
+/* Once list has reached max height. Deploys vertical scroll */
+#code-list {
+    height:450;
+    overflow-y: scroll;
+    
+}
+
