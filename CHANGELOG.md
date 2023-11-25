@@ -7,6 +7,8 @@ Changelog
 
 New
 ~~~
+- Added syntax highlighting based on snippet.title file extension. Now
+  supports any lang with file extension. [Donald McLaughlin]
 - Added Feats searching, Front end clean up. [Donald McLaughlin]
 - Added Search query feature and corresponding form and front end stuff.
   [Donald McLaughlin]
