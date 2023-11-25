@@ -29,6 +29,7 @@ New
 Other
 ~~~~~
 - Chore: cl. [Donald McLaughlin]
+- Chore: cl. [Donald McLaughlin]
 - Fix footer pos and attempt fixed sidebar. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]
 - Workign edit snippet codemirror. [Donald McLaughlin]
