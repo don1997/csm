@@ -30,7 +30,16 @@ def login():
 
     return render_template('login.html', form=form)
 
+from pygments.lexers import get_lexer_for_filename, get_lexer_by_name, guess_lexer
+from pygments.util import ClassNotFound
 
+def get_lexer(snippet_title, snippet_content):
+    
+    try:
+        return get_lexer_for_filename(snippet_title)
+    except ClassNotFound:
+        return guess_lexer(snippet_content)
+   
 @main.route('/dashboard', defaults={'snippet_id': None}, methods=['GET', 'POST'])
 @main.route('/dashboard/<int:snippet_id>', methods=['GET', 'POST'])
 @login_required
@@ -43,7 +52,7 @@ def dashboard(snippet_id):
         selected_snippet = Snippet.query.filter_by(id=snippet_id, user_id=current_user.id).first()
         if selected_snippet:
         
-            highlighted_code = highlight(selected_snippet.content, PythonLexer(), HtmlFormatter())
+            highlighted_code = highlight(selected_snippet.content, get_lexer(selected_snippet.title, selected_snippet.content), HtmlFormatter())
             
     search_results = None
     form = SearchForm()
