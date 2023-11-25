@@ -7,6 +7,9 @@ Changelog
 
 New
 ~~~
+- Added Search query feature and corresponding form and front end stuff.
+  [Donald McLaughlin]
+- Added dummy search bar. [Donald McLaughlin]
 - Added delete modal and buttons for ops. [Donald McLaughlin]
 - Added latest ver of Bootstrap 5.2->5.3, Added scroll for overflow if
   not posted already, work on delete modal. [Donald McLaughlin]
@@ -22,6 +25,8 @@ New
 
 Other
 ~~~~~
+- Fix footer pos and attempt fixed sidebar. [Donald McLaughlin]
+- Chore: cl. [Donald McLaughlin]
 - Workign edit snippet codemirror. [Donald McLaughlin]
 
 
