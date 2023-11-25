@@ -80,3 +80,6 @@ FRONTEND
 2. $ flask db migrate -m "Your feature description"
 3. flask db upgrade
 
+## Generate new theme
+
+pygmentize -S <THEME NAME> -f html -a .highlight > src/app/static/<THEME NAME.css>
