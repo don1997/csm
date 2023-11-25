@@ -22,3 +22,58 @@ body {
     
 }
 
+#sidebar {
+    position: fixed;
+    top: 50px; /* Height of the navbar */
+    bottom: 60px; /* Height of the footer */
+    left: 0;
+    overflow-y: auto;
+    width: 25%;
+}
+
+#main-content {
+    margin-left: 25%;
+    padding-top: 50px; /* Same as navbar height, if you want some space at the top */
+}
+
+
+/* CSS for large screens */
+@media (min-width: 768px) {
+    #sidebar {
+        position: fixed;
+        top: 50px;
+        bottom: 60px;
+        left: 0;
+        overflow-y: auto;
+        width: 25%;
+    }
+
+    #main-content {
+        margin-left: 25%;
+    }
+}
+
+/* CSS for small screens */
+@media (max-width: 767.98px) {
+    #sidebar {
+        position: relative;
+        width: 100%;
+        top: 0;
+        bottom: auto;
+    }
+
+    #main-content {
+        margin-left: 0;
+    }
+}
+
+
+/*Makes Footer Stick to bottom of page */
+body{
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+}
+footer{
+    margin-top: auto;
+}

@@ -45,7 +45,7 @@ def dashboard(snippet_id):
         
             highlighted_code = highlight(selected_snippet.content, PythonLexer(), HtmlFormatter())
     return render_template(
-        'dashboard.html',
+        'dash3.html',
         snippets=snippets,
         selected_snippet=selected_snippet,
         highlighted_code=highlighted_code,
