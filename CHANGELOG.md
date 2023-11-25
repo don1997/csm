@@ -7,6 +7,11 @@ Changelog
 
 New
 ~~~
+- Trimmed codemirror5_dupe. [Donald McLaughlin]
+- Removed codemirror5 (100mb) from submodules and in place made a much
+  smaller local file. [Donald McLaughlin]
+- Added Gruvbox theme and fixed issue with non tagged element color.
+  [Donald McLaughlin]
 - Added syntax highlighting based on snippet.title file extension. Now
   supports any lang with file extension. [Donald McLaughlin]
 - Added Feats searching, Front end clean up. [Donald McLaughlin]
@@ -28,6 +33,7 @@ New
 
 Other
 ~~~~~
+- Chore: cl. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]
 - Fix footer pos and attempt fixed sidebar. [Donald McLaughlin]
