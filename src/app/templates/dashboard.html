@@ -1,3 +1,8 @@
+<!-- Most Stable Dashboard Version.-->
+<!-- Most Stable Dashboard Version.-->
+<!-- Most Stable Dashboard Version.-->
+
+
 <link rel="stylesheet" href="{{ url_for('static', filename='css/custom.css') }}">
 <link rel="stylesheet" href="{{ url_for('static', filename='pygments.css') }}">
 {% extends "my_base.html" %}
@@ -15,6 +20,28 @@
     <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-primary" type="submit">Search</button>
   </form>
+  
+
+
+  <!-- Add the search form -->
+<form method="post">
+  {{ form.hidden_tag() }}
+  {{ form.title(size=20)}}
+  {{ form.submit() }}
+</form>
+
+<!-- Display search results -->
+{% if search_results %}
+  <div style="width: 33rem;">
+      <h3>Search Results:</h3>
+      {% for result in search_results %}
+          <a href="{{ url_for('main.dashboard', snippet_id=result.id) }}"class="list-group-item list-group-item-action bg-dark text-white">{{ result.title }}</a>
+      
+      {% endfor %}
+  </div>
+  
+{% endif %}
+
   <!-- SEARCH bar End-->
 
 

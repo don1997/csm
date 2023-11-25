@@ -33,9 +33,12 @@ class LoginForm(FlaskForm):
  
 
 
-
-
 class SnippetForm(FlaskForm):
     title = StringField(validators=[InputRequired()], render_kw={"placeholder": "Insert Snippet Title!"})
     content = TextAreaField(validators=[InputRequired()], render_kw={"placeholder": "//Insert Code!"})
     submit = SubmitField('Post')
+
+
+class SearchForm(FlaskForm):
+    title = StringField(validators=[InputRequired()], render_kw={"placeholder": "Search"})
+    submit = SubmitField('Search')

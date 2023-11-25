@@ -2,7 +2,7 @@ from flask import Blueprint, render_template, url_for, redirect, request, abort
 from flask_login import login_user, login_required, logout_user, current_user
 from . import db, bcrypt
 from .models import User, Snippet
-from .forms import LoginForm, RegisterForm, SnippetForm
+from .forms import LoginForm, RegisterForm, SnippetForm, SearchForm
 from flask import flash
 
 
@@ -31,8 +31,8 @@ def login():
     return render_template('login.html', form=form)
 
 
-@main.route('/dashboard', defaults={'snippet_id': None})
-@main.route('/dashboard/<int:snippet_id>')
+@main.route('/dashboard', defaults={'snippet_id': None}, methods=['GET', 'POST'])
+@main.route('/dashboard/<int:snippet_id>', methods=['GET', 'POST'])
 @login_required
 def dashboard(snippet_id):
     snippets = current_user.snippets
@@ -44,12 +44,24 @@ def dashboard(snippet_id):
         if selected_snippet:
         
             highlighted_code = highlight(selected_snippet.content, PythonLexer(), HtmlFormatter())
+            
+    search_results = None
+    form = SearchForm()
+    if form.validate_on_submit():
+        search_query = form.title.data
+        # Search for snippets with titles that contain the search query
+        search_results = Snippet.query.filter(Snippet.title.like(f'%{search_query}%'), Snippet.user_id == current_user.id).all()
+        
+   
     return render_template(
         'dashboard.html',
         snippets=snippets,
         selected_snippet=selected_snippet,
         highlighted_code=highlighted_code,
-        styles=styles
+        styles=styles,
+        search_results=search_results,
+        form=form
+        
     )
     
 @main.route('/logout', methods=["GET","POST"])
@@ -139,4 +151,6 @@ def delete_snippet(id):
         flash("An error occurred while deleting the snippet. PLease try again.", "error")
 
     return redirect(url_for('main.dashboard'))
+    
+    
     
