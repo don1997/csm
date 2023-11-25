@@ -7,6 +7,7 @@ Changelog
 
 New
 ~~~
+- Added Feats searching, Front end clean up. [Donald McLaughlin]
 - Added Search query feature and corresponding form and front end stuff.
   [Donald McLaughlin]
 - Added dummy search bar. [Donald McLaughlin]
