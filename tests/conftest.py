@@ -1,65 +1,64 @@
-# tests/conftest.py
 import pytest
 from src.app import create_app, db
-from src.app.models import User
+from src.app.models import User, Snippet, Tag
+from datetime import datetime
 
 @pytest.fixture(scope='module')
 def test_app():
-    """
-    Create a Flask application configured for testing.
-    """
-    app = create_app()
-    app.config.update({
+    app = create_app({
+        'WTF_CSRF_ENABLED': False,  # Disable CSRF for testing
         'TESTING': True,
-        'SQLALCHEMY_DATABASE_URI': 'sqlite:///:memory:'  # Use in-memory SQLite database for testing.
+        'SQLALCHEMY_DATABASE_URI': 'sqlite:///test_database.db'
     })
-
-    # Create the database and the database table
     with app.app_context():
-        db.create_all()
+        yield app
+        
+        
+@pytest.fixture(scope='module')
+def test_db(test_app):
+    db.create_all()
 
-    yield app  # testing happens here
+    yield db
 
-    with app.app_context():
-        db.session.remove()
-        db.drop_all()
+    db.session.remove()
+    db.drop_all()
 
 @pytest.fixture(scope='module')
-def client(test_app):
+def test_client(test_app):
     return test_app.test_client()
 
-from src.app import bcrypt
 
-@pytest.fixture(scope='module')
-def new_user(test_app):
-    """
-    Create a user for the tests with a plain text password.
-    """
-    with test_app.app_context():
-        user = User(username='testuser', password='testpassword')
-        db.session.add(user)
-        db.session.commit()
-        return user
-    
+
 @pytest.fixture(scope='function')
-def session(test_app):
-    """Provides an isolated database session for each test."""
-    # Push an application context to bind the SQLAlchemy object to your app
-    context = test_app.app_context()
-    context.push()
+def new_user():
+    user = User(username='testuser', password='testpassword')
+    return user
 
-    connection = db.engine.connect()
-    transaction = connection.begin()
+@pytest.fixture(scope='function')
+def new_snippet(new_user):
+    snippet = Snippet(title='Test Snippet', content='Test content', author=new_user, date_posted=datetime.utcnow())
+    return snippet
 
-    options = dict(bind=connection, binds={})
-    session = db.create_scoped_session(options=options)
+@pytest.fixture(scope='function')
+def new_tag():
+    tag = Tag(title='Test Tag')
+    return tag
 
-    db.session = session
+@pytest.fixture(scope='function')
+def add_user(test_db, new_user):
+    
+    test_db.session.add(new_user)
+    test_db.session.commit()
+    return new_user
 
-    yield session
+@pytest.fixture(scope='function')
+def add_snippet(test_db, new_snippet):
+    test_db.session.add(new_snippet)
+    test_db.session.commit()
+    return new_snippet
 
-    session.remove()
-    transaction.rollback()
-    connection.close()
-
-    context.pop()
+@pytest.fixture(scope='function')
+def add_tag(test_db, new_tag):
+    test_db.session.add(new_tag)
+    test_db.session.commit()
+    return new_tag

@@ -9,13 +9,16 @@ bcrypt = Bcrypt()
 login_manager = LoginManager()
 migrate = Migrate()
 
-def create_app():
+def create_app(test_config=None):
     app = Flask(__name__)
     Bootstrap(app)
 
+    if test_config:
+        app.config.update(test_config)
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
     app.config['SECRET_KEY'] = 'thisisasecretkey'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
+
 
     db.init_app(app)
     bcrypt.init_app(app)

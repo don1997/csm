@@ -14,6 +14,8 @@ class RegisterForm(FlaskForm):
                              InputRequired(), Length(min=8, max=20)], render_kw={"placeholder": "Password"})
 
     submit = SubmitField('Register')
+    
+    
    
     #Handle case of duplicate names in form
     def validate_username(self, username):
@@ -21,6 +23,7 @@ class RegisterForm(FlaskForm):
         if existing_user_username:
             raise ValidationError(
                 "That username already exists. Please choose a different one")
+            
             
 class LoginForm(FlaskForm):
     username = StringField(validators=[
