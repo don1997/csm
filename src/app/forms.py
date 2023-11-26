@@ -24,7 +24,7 @@ class RegisterForm(FlaskForm):
             raise ValidationError(
                 "That username already exists. Please choose a different one")
             
-            
+from flask_bcrypt import check_password_hash           
 class LoginForm(FlaskForm):
     username = StringField(validators=[
                            InputRequired(), Length(min=4, max=20)], render_kw={"placeholder": "Username"})
@@ -33,7 +33,19 @@ class LoginForm(FlaskForm):
                              InputRequired(), Length(min=8, max=20)], render_kw={"placeholder": "Password"})
 
     submit = SubmitField('Login')
- 
+    def validate(self):
+        valid = super(LoginForm, self).validate()
+        if not valid:
+            return False
+
+        user = User.query.filter_by(username=self.username.data).first()
+        if not user or not check_password_hash(user.password, self.password.data):
+            self.password.errors.append('Invalid username or password')
+            return False
+
+        return True
+
+  
 
 
 class SnippetForm(FlaskForm):
