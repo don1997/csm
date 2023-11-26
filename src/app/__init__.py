@@ -13,12 +13,14 @@ def create_app(test_config=None):
     app = Flask(__name__)
     Bootstrap(app)
 
-    if test_config:
-        app.config.update(test_config)
+    
     app.config['SQLALCHEMY_DATABASE_URI'] = 'sqlite:///database.db'
     app.config['SECRET_KEY'] = 'thisisasecretkey'
     app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
-
+    
+    # Override with test configuration if provided
+    if test_config:
+        app.config.update(test_config)
 
     db.init_app(app)
     bcrypt.init_app(app)
