@@ -11,9 +11,7 @@ def test_valid_registration(test_app, test_db):
     with test_app.test_request_context():
         test_db.create_all()  # Ensure this is called
         form_data = MultiDict([
-            ('username', 'newuser'),
-            ('password', 'securepassword123')
-        ])
+            ('username', 'newuser'), ('password', 'securepassword123') ])
         form = RegisterForm(formdata=form_data)
         assert form.validate(), form.errors
 
@@ -88,3 +86,5 @@ def snippet_creation_test(test_app, test_db):
         test_db.session.commit()
 
         assert snippet.title == 'Test Snippet'
+        assert snippet.title == 'Initial Content'
+

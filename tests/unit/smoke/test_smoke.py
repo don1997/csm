@@ -8,28 +8,27 @@ allows for command $ pytest -m smoke
 for running
 """
 @pytest.mark.smoke
-def test_smoke(client, session):
+def test_smoke(test_app,test_client):
 
     # testing home page
-    response = client.get('/')
+    response = test_client.get('/')
     assert response.status_code == 200
     assert b"Welcome" in response.data
 
     # testing login
-    response = client.get('/login')
+    response = test_client.get('/login')
     assert response.status_code == 200
     assert b"Login" in response.data
 
     # testing register
-    response = client.get('/register')
+    response = test_client.get('/register')
     assert response.status_code == 200
     assert b"Register"
 
-    # create mock user
     with patch('flask_login.utils._get_user') as current_user_mock:
         # Mock the current_user to simulate a logged-in state
         current_user_mock.return_value = User(id=1, username='testuser')
-        response = client.get('/dashboard')
+        response = test_client.get('/dashboard')
         assert response.status_code == 200
         assert b"LOGO" in response.data
         
