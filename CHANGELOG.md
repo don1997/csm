@@ -7,6 +7,13 @@ Changelog
 
 New
 ~~~
+- Flesh out unit testing for integration testing, form testing, smoke
+  testing, auth-encrypt testing. [Donald McLaughlin]
+- Fixed smoke test to work now. Added test-script.py for script exec.
+  [Donald McLaughlin]
+- Removed dummy search and updated wtf search with bootstrap5. As well
+  as removing old tests and adding testing script. [Donald McLaughlin]
+- Started to successfully flesh out unit testing. [Donald McLaughlin]
 - Trimmed codemirror5_dupe. [Donald McLaughlin]
 - Removed codemirror5 (100mb) from submodules and in place made a much
   smaller local file. [Donald McLaughlin]
@@ -31,8 +38,16 @@ New
   [Donald McLaughlin]
 - New: Added merged changes from tasks @ v0.6.3. [Donald McLaughlin]
 
+Fix
+~~~
+- Finally fixed db overwrite issue with testing. [Donald McLaughlin]
+- Fixed db. [Donald McLaughlin]
+
 Other
 ~~~~~
+- Fixed more issues with login testing and added more. [Donald
+  McLaughlin]
+- Chore: cl. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]
