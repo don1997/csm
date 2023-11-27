@@ -49,11 +49,11 @@ class LoginForm(FlaskForm):
 
 
 class SnippetForm(FlaskForm):
-    title = StringField(validators=[InputRequired()], render_kw={"placeholder": "Insert Snippet Title!"})
-    content = TextAreaField(validators=[InputRequired()], render_kw={"placeholder": "//Insert Code!"})
+    title = StringField(validators=[InputRequired(), Length(min=1, max=80)], render_kw={"placeholder": "Insert Snippet Title!"})
+    content = TextAreaField(validators=[InputRequired(), Length(min=1, max=1000)], render_kw={"placeholder": "//Insert Code!"})
     submit = SubmitField('Post')
 
 
 class SearchForm(FlaskForm):
-    title = StringField(validators=[InputRequired()], render_kw={"placeholder": "Search"})
+    title = StringField(validators=[InputRequired(), Length(min=1, max=80)], render_kw={"placeholder": "Search"})
     submit = SubmitField('Search')

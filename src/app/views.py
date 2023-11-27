@@ -105,6 +105,7 @@ def new_snippet():
                 flash('Snippet title already exists. Enter unique title')
                 return render_template('new_snippet.html',form=form)
             snippet = Snippet(title=form.title.data,content=form.content.data,author=current_user)
+            
             db.session.add(snippet)
             db.session.commit()
             return redirect(url_for('main.dashboard'))
