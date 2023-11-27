@@ -14,21 +14,31 @@
 <h2> Hi {{ current_user.username }}! [{{current_user.id}}]</h2>
 
 <div class="container-fluid">
-  
-  
-  <!-- SEARCH bar Start-->
-  <form class="d-flex" id="search-bar">
+<!-- For reference on converting Bootstrap button to wtf boostrap 5 component-->
+<!--
+
+
+MAKE THIS:
+<form class="d-flex" id="search-bar">
     <input class="form-control me-1" type="search" placeholder="Search" aria-label="Search">
     <button class="btn btn-primary" type="submit">Search</button>
   </form>
   
+INTO THIS:
+  <form method="post">
+    {{ form.hidden_tag() }}
+    {{ form.title(size=20)}}
+    {{ form.submit() }}
+  </form>
 
+  end
+-->
 
   <!-- Add the search form -->
-<form method="post">
+<form class="d-flex" method="post">
   {{ form.hidden_tag() }}
-  {{ form.title(size=20)}}
-  {{ form.submit() }}
+  {{ form.title(class_="form-control me-1", placeholder="Search", aria_label="Search", style="width: 28rem;") }}
+  {{form.submit(class_="btn btn-primary")}}
 </form>
 
 <!-- Display search results -->

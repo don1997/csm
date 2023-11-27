@@ -39,7 +39,7 @@ def get_lexer(snippet_title, snippet_content):
         return get_lexer_for_filename(snippet_title)
     except ClassNotFound:
         return guess_lexer(snippet_content)
-   
+
 @main.route('/dashboard', defaults={'snippet_id': None}, methods=['GET', 'POST'])
 @main.route('/dashboard/<int:snippet_id>', methods=['GET', 'POST'])
 @login_required
@@ -61,7 +61,7 @@ def dashboard(snippet_id):
         # Search for snippets with titles that contain the search query
         search_results = Snippet.query.filter(Snippet.title.like(f'%{search_query}%'), Snippet.user_id == current_user.id).all()
         
-   
+
     return render_template(
         'dashboard.html',
         snippets=snippets,
