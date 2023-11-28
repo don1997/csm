@@ -53,6 +53,8 @@ INTO THIS:
   
 {% endif %}
 
+
+
   <!-- SEARCH bar End-->
 
 
@@ -122,7 +124,16 @@ INTO THIS:
 
                 <h3>{{ selected_snippet.title }}</h3>
                 <h5>{{ selected_snippet.date_posted}} </h5>
+                <div class="tag-view">
+                  <p>Tags:</p>
 
+                    <ul>
+                    {% for tag in selected_snippet.tags %}
+                      <li>{{ tag.title }}</li>
+                    {% endfor %}
+
+                  </ul>
+                </div>
                 <!-- Hidden textarea to hold the text to be copied -->
                 <textarea id="hiddenTextarea" style="position: absolute; left: -9999px;">{{ selected_snippet.content }}</textarea>
                 <!-- Render the highlighted code -->
@@ -142,12 +153,15 @@ INTO THIS:
                     </script>
                 {% else %}
                 <p>Select a snippet from the list to view its content here.</p>
+
                 {% endif %}
             </div>
         </div>
     </div>
     </div>
 </div>
+
+
 
 
 {% endblock %}

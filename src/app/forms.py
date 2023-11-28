@@ -45,12 +45,10 @@ class LoginForm(FlaskForm):
 
         return True
 
-  
-
-
 class SnippetForm(FlaskForm):
     title = StringField(validators=[InputRequired(), Length(min=1, max=80)], render_kw={"placeholder": "Insert Snippet Title!"})
-    content = TextAreaField(validators=[InputRequired(), Length(min=1, max=1000)], render_kw={"placeholder": "//Insert Code!"})
+    content = TextAreaField(validators=[InputRequired(), Length(min=1, max=4000000)], render_kw={"placeholder": "//Insert Code!"})
+    tag = StringField(render_kw={"placeholder": "Enter tag(s) here ex:tag1,tag2'"})
     submit = SubmitField('Post')
 
 
