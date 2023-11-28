@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-(unreleased)
-------------
+0.6.5 (2023-11-28)
+------------------
 
 New
 ~~~
@@ -48,6 +48,7 @@ Fix
 
 Other
 ~~~~~
+- Chore: cl. [Donald McLaughlin]
 - Tagging feat. [Donald McLaughlin]
 - Fixed more issues with login testing and added more. [Donald
   McLaughlin]
