@@ -1,4 +1,4 @@
-# CSM v0.6.0 
+# CSM v0.7.0 
 ## Note: Fix build scripts
 
 ## gitchangelog 
