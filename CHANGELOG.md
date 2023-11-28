@@ -7,6 +7,9 @@ Changelog
 
 New
 ~~~
+- Added tags and searching for tags. As well as displaying tags in
+  template and Search results for tag. [Donald McLaughlin]
+- New feats below. [Donald McLaughlin]
 - Flesh out unit testing for integration testing, form testing, smoke
   testing, auth-encrypt testing. [Donald McLaughlin]
 - Fixed smoke test to work now. Added test-script.py for script exec.
@@ -45,6 +48,7 @@ Fix
 
 Other
 ~~~~~
+- Tagging feat. [Donald McLaughlin]
 - Fixed more issues with login testing and added more. [Donald
   McLaughlin]
 - Chore: cl. [Donald McLaughlin]
