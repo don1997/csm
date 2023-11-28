@@ -130,21 +130,6 @@ def new_snippet():
             db.session.add(snippet)
             
             # Tagging
-                        
-            """ Ver 0
-            Summary: Make sure we can correctly create a tag. add the tag to db. 
-            then append because of relationship. Then commit everything.
-            # Create our tag through form
-            tag = Tag(title=form.tag.data)
-            # Add the tag to the session
-            db.session.add(tag)
-            # Append tag because of relationship
-            snippet.tags.append(tag)
-            # Tagging
-            
-            db.session.commit()
-            """
-            # Process tags
             tag_titles = form.tag.data.split(',')
             for tag_title in tag_titles:
                 tag = Tag.query.filter_by(title=tag_title.strip()).first()
@@ -186,7 +171,7 @@ def edit_snippet(id):
         snippet.content = form.content.data
         
         # Handle tag update
-        new_tags = form.tag.data.split(',')  # Assuming a comma-separated string of tags
+        new_tags = form.tag.data.split(',')  
         snippet.tags = []
         for tag_title in new_tags:
             tag_title = tag_title.strip()
@@ -223,6 +208,3 @@ def delete_snippet(id):
         flash("An error occurred while deleting the snippet. PLease try again.", "error")
 
     return redirect(url_for('main.dashboard'))
-    
-    
-    
