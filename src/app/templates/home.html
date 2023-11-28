@@ -2,11 +2,15 @@
 
 {% block title %}Home{% endblock %}
 
-{% block main %}
-    <h1>Welcome</h1>
 
-      
-    <a href="{{ url_for('main.login') }}">Login Page</a><br>
-    <a href="{{ url_for('main.register') }}">Register Page</a><br>
+{% block main %}
+    <h1 style="text-align: center;">Welcome</h1>
+
+    <style>
+        .btn {width: 33rem; center;justify-self: center;}
+    </style>
+    <a class="btn btn-primary" role="button" href="{{ url_for('main.login') }}"style="width: 33rem; align-self: center;justify-self: center;"> Login Page</a><br>
+    <a class="btn btn-primary" role="button" href="{{ url_for('main.register') }}"style="width: 33rem;align-self: center;justify-self: center;"> Register Page</a><br>
+
 {% endblock %}
 

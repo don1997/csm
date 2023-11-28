@@ -17,7 +17,8 @@
       {{ wtf.quick_form(form) }}
     </div>
 
-    <a href="{{url_for('main.login')}}">Already have an account? </a><br>
+    <a class="btn btn-primary" role="button" href="{{ url_for('main.login') }}"style="width: 25rem;"> Already have an account? </a><br>
+
 </body>
 
 {% endblock %}

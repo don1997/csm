@@ -8,8 +8,8 @@
 <body>
     <h1>Login Page</h1>
 
-    <a href="{{url_for('main.register')}}">Dont have an account </a><br>
-    
+    <a class="btn btn-primary" role="button" href="{{ url_for('main.register') }}"style="width: 25rem;"> Don't have an Account?</a><br>
+
     <div class="container">
         <h2>Login</h2>
         {{ wtf.quick_form(form) }}
