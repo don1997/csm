@@ -13,7 +13,7 @@ commit_message=$1
 cd /home/donald/Projects/csm
 
 #avoid conflicts!
-git pull origin v0.6.0_Bootstrap5
+git pull origin v0.7.0
 
 #update changelog
 gitchangelog > CHANGELOG.md
@@ -24,7 +24,7 @@ git add .
 # Commit!
 git commit -m "$commit_message"
 
-git push origin v0.6.0_Bootstrap5
+git push origin v0.7.0
 
 echo "Pushed to GitHub successfully!"
 
@@ -38,6 +38,6 @@ git add .
 
 git commit -m "Chore: cl"
 
-git push origin v0.6.0_Bootstrap5
+git push origin v0.7.0
 
 echo "Changelog updated Successfully!"
