@@ -2,6 +2,15 @@ Changelog
 =========
 
 
+(unreleased)
+------------
+
+New
+~~~
+- Added branch v0.7.0. [Donald McLaughlin]
+- New: New tag for feats @ v0.6.5. [Donald McLaughlin]
+
+
 0.6.5 (2023-11-28)
 ------------------
 
