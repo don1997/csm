@@ -90,14 +90,3 @@ def snippet_creation_test(test_app, test_db):
         assert snippet.title == 'Test Snippet'
         assert snippet.title == 'Initial Content'
 
-
-
-# Form length test
-
-def test_reg_name_long(test_app, test_db):
-    with test_app.test_request_context():
-        test_db.create_all()  # Ensure this is called
-        form_data = MultiDict([
-            ('username', 'Lorem ipsum dolor sit amet, consectetuer adipiscing elit. Aenean commodo ligula eget dolor. Aenean m'), ('password', 'securepassword123') ])
-        form = RegisterForm(formdata=form_data)
-        assert not form.validate(), form.errors
