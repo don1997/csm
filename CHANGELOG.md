@@ -2,8 +2,8 @@ Changelog
 =========
 
 
-(unreleased)
-------------
+0.7.0 (2023-11-29)
+------------------
 
 New
 ~~~
@@ -20,6 +20,7 @@ New
 
 Other
 ~~~~~
+- Chore: cl. [Donald McLaughlin]
 - Update readme. [Donald McLaughlin]
 - Added more fixes. [Donald McLaughlin]
 - Chore: cl. [Donald McLaughlin]
