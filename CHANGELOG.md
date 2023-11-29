@@ -7,8 +7,24 @@ Changelog
 
 New
 ~~~
+- Added template images. [Donald McLaughlin]
+- Readme template. [Donald McLaughlin]
+- Added B_5 buttons over links. [Donald McLaughlin]
+- Worked on testing. [Donald McLaughlin]
+- Added license. [Donald McLaughlin]
+- Update build script. [Donald McLaughlin]
 - Added branch v0.7.0. [Donald McLaughlin]
 - New: New tag for feats @ v0.6.5. [Donald McLaughlin]
+
+Other
+~~~~~
+- Chore: clean readme. [Donald McLaughlin]
+- Update db. [Donald McLaughlin]
+- Rename LICENSE.md to LICENSE. [don1997]
+- Rename LICENSE to LICENSE.md. [don1997]
+- Create LICENSE. [don1997]
+- Remove license. [Donald McLaughlin]
+- Chore: cl. [Donald McLaughlin]
 
 
 0.6.5 (2023-11-28)
