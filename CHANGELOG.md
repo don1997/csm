@@ -7,6 +7,8 @@ Changelog
 
 New
 ~~~
+- Added changes to footer, navbar, and testing to finalize for project.
+  [Donald McLaughlin]
 - Added template images. [Donald McLaughlin]
 - Readme template. [Donald McLaughlin]
 - Added B_5 buttons over links. [Donald McLaughlin]
@@ -18,6 +20,9 @@ New
 
 Other
 ~~~~~
+- Update readme. [Donald McLaughlin]
+- Added more fixes. [Donald McLaughlin]
+- Chore: cl. [Donald McLaughlin]
 - Chore: clean readme. [Donald McLaughlin]
 - Update db. [Donald McLaughlin]
 - Rename LICENSE.md to LICENSE. [don1997]
