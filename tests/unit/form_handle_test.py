@@ -1,3 +1,6 @@
+"""
+Form Testing
+"""
 from src.app.forms import SnippetForm, LoginForm
 def test_form_handle(test_app, test_client, test_db):
     # Test user registration

@@ -6,6 +6,8 @@ from src.app import db
 """
 allows for command $ pytest -m smoke 
 for running
+
+Tests core features
 """
 @pytest.mark.smoke
 def test_smoke(test_app,test_client,test_db):

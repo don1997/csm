@@ -1,7 +1,9 @@
 from src.app.forms import SnippetForm
 
 from werkzeug.datastructures import MultiDict
-
+"""
+Form Max size input
+"""
 
 # Test normal form
 # Needs werkzeug dict to work.

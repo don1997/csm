@@ -2,6 +2,9 @@ from src.app.forms import RegisterForm, LoginForm
 from src.app.models import User
 from werkzeug.datastructures import MultiDict
 
+"""
+Login and Encryption testing 
+"""
 
 # Login and encryption testing
 def test_form_instantiation(test_app):
